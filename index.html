@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ana Borges - Psicóloga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="logo_ana.svg">
+  <link rel="icon" type="image/png" href="logo_ana.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ====== RESET CURTO ====== */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0f1220;color:#0b0b0b}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* ====== TOKENS (ajuste para paleta da marca) ====== */
+    :root{
+      --bg: transparent;             /* fundo da página (sem cor) */
+      --surface: #ffffff;            /* cartões claros */
+      --ink: #141414;                /* texto principal */
+      --muted: #5a5a6a;              /* texto secundário */
+      --brand-1: #5CC8CB;            /* ciano brand */
+      --brand-2: #CA73B0;            /* roxo brand */
+      --brand-3: #FEAFC2;            /* rosa brand */
+      --ring: rgba(20,20,20,.10);
+      --shadow: 0 18px 40px rgba(13,18,33,.22), 0 4px 12px rgba(13,18,33,.12);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+    }
+
+    body{background:radial-gradient(1200px 600px at 10% -5%, rgba(92,200,203,.18), transparent 60%),
+                       radial-gradient(1100px 600px at 100% 0%, rgba(202,115,176,.18), transparent 60%),
+                       var(--bg)}
+
+    /* ====== BLOCO CONTATOS ====== */
+    .contact-section{
+      padding:clamp(28px,4vw,48px) 16px;
+      min-height: 100vh;
+      position: relative;
+    }
+    .contact-wrap{
+      max-width:1500px;
+      margin-inline:auto;
+      background:linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.9));
+      border:1px solid var(--ring);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+      backdrop-filter:saturate(1.2) blur(6px);
+      min-height: calc(100vh - clamp(56px,8vw,96px));
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-inner{
+      padding:clamp(20px,3.6vw,36px);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Título */
+    .contact-header{display:grid;gap:.5rem;margin-bottom:clamp(18px,2.8vw,22px);text-align:center}
+    .contact-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .contact-title{font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.15;margin:0;background:linear-gradient(90deg,var(--brand-2),var(--brand-1));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .contact-sub{max-width:56ch;margin:0 auto;color:#333;font-size:clamp(.95rem,2.2vw,1.05rem);}
+
+    /* Posts do Blog (grid de 4 posts) */
+    .blog-feature{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+    .blog-card{position:relative;overflow:hidden;border-radius:var(--radius-lg);border:1px solid var(--ring);background:var(--surface);display:flex;flex-direction:column;height:100%}
+    .blog-media{aspect-ratio:16/9;background:linear-gradient(135deg, rgba(92,200,203,.25), rgba(202,115,176,.25));display:grid;place-items:center;flex-shrink:0}
+    .blog-media img{width:100%;height:100%;object-fit:cover}
+    .blog-media .ph{font-weight:700;opacity:.35}
+    .blog-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex-grow:1}
+    .blog-kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+    .dot{width:6px;height:6px;border-radius:999px;background:linear-gradient(135deg,var(--brand-2),var(--brand-1))}
+    .blog-title{margin:.35rem 0 .25rem;font-size:clamp(1.05rem,2.6vw,1.2rem);line-height:1.25;color:var(--ink)}
+    .blog-excerpt{margin:0 0 auto;color:#444;font-size:.95rem;line-height:1.5;flex-grow:1}
+    .blog-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--ring);padding:.72rem 1rem;border-radius:12px;font-weight:600;transition:all .2s ease}
+    .btn-primary{background:#4A9B9E;color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(74,155,158,.15)}
+    .btn-primary:hover{background:#3A8285;transform:translateY(-1px);box-shadow:0 4px 16px rgba(74,155,158,.25)}
+    .btn-ghost{background:#fff;color:#555;border-color:rgba(20,20,20,.12)}
+    .btn-ghost:hover{background:#f8f9fa;border-color:rgba(20,20,20,.18);transform:translateY(-1px)}
+
+    /* Redes Sociais (exatamente 4) */
+    .socials{margin-top:clamp(18px,3vw,26px)}
+    .socials-title{font-size:clamp(1.05rem,2.2vw,1.2rem);color:#2b2b2b;margin:0 0 10px;text-align:center}
+    .social-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .social-card{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;background:linear-gradient(180deg,#ffffff,rgba(255,255,255,.92));border:1px solid var(--ring);border-radius:14px;padding:12px 14px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+    .social-card:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(13,18,33,.16),0 8px 12px rgba(13,18,33,.08);border-color:rgba(13,18,33,.18)}
+    .icon{
+      width:48px;height:48px;border-radius:12px;display:grid;place-items:center;color:#fff;
+      background:conic-gradient(from 180deg at 50% 50%, var(--brand-2), var(--brand-1), var(--brand-3), var(--brand-2));
+    }
+    /* Cores originais das redes sociais */
+    .icon-instagram{
+      background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    .icon-tiktok{
+      background:#000;
+    }
+    .icon-linkedin{
+      background:#0077b5;
+    }
+    .icon-youtube{
+      background:#ff0000;
+    }
+    .social-title{font-weight:700;color:#222;margin:0 0 2px;font-size:1rem}
+    .social-desc{color:var(--muted);font-size:.92rem;margin:0}
+
+    /* Redes sociais fora do box */
+    .socials-outside {
+      max-width: 1500px;
+      margin: clamp(24px, 4vw, 40px) auto 0;
+      padding: 0 16px;
+    }
+    .socials-outside .socials-title {
+      text-align: center;
+      margin-bottom: clamp(16px, 3vw, 24px);
+    }
+
+    /* Rodapé */
+    .footer{background:linear-gradient(120deg,#CA73B0,#5CC8CB);color:#fff;padding:clamp(32px,4vw,48px) 20px}
+    .footer-inner{max-width:1100px;margin-inline:auto;display:grid;gap:28px}
+    .footer-logo{text-align:center;margin-bottom:8px}
+    .footer-logo img{max-width:120px;height:auto;opacity:.9}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:28px}
+    .footer-col h4{margin:0 0 12px;font-size:1.05rem;font-weight:700}
+    .footer-col p{margin:0;font-size:.95rem;line-height:1.6;opacity:.9}
+    .footer-col ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+    .footer-col a{color:#fff;text-decoration:none;font-size:.95rem;transition:opacity .2s ease}
+    .footer-col a:hover{opacity:.8}
+    .footer-socials{display:flex;gap:12px;margin-top:16px}
+    .footer-socials a{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,.1);transition:background .2s ease}
+    .footer-socials a:hover{background:rgba(255,255,255,.25)}
+    .footer-copy{border-top:1px solid rgba(255,255,255,.15);margin-top:28px;padding-top:20px;text-align:center;font-size:.85rem;color:#f0f0f0}
+
+    /* Responsivo */
+    @media (min-width:720px){
+      .blog-feature{grid-template-columns:repeat(2,1fr);gap:18px}
+      .blog-body{padding:18px 18px 20px}
+      .social-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (min-width:1040px){
+      .blog-feature{grid-template-columns:repeat(4,1fr);gap:20px}
+      .social-grid{grid-template-columns:repeat(4,1fr)}
+    }
+
+/* ===== CABEÇALHO (escopo local) ===== */
+.site-header {
+  --brand-1: #5CC8CB; /* ciano */
+  --brand-2: #CA73B0; /* roxo */
+  --ink: #111;
+  --ink-2: #4a4a4a;
+  --surface: rgba(255,255,255,.82);
+  --ring: rgba(0,0,0,.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(1.15) blur(8px);
+  border-bottom: 1px solid var(--ring);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.68));
+}
+
+.site-header .header-bar{
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: clamp(10px, 2vw, 14px) 16px;
+}
+
+/* Marca */
+.site-header .brand{
+  display: inline-flex; align-items: center; gap: .6rem;
+  text-decoration: none;
+}
+.site-header .brand-mark{width:36px;height:36px;display:block;border-radius:10px}
+.site-header .brand-type{
+  font-weight: 700; letter-spacing: .2px; color: var(--ink);
+  font-size: clamp(1rem, 2.2vw, 1.08rem);
+  background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* Navegação desktop */
+.site-header .nav-desktop{
+  display: none; 
+  justify-self: center;
+  gap: 1.2rem;
+}
+.site-header .nav-desktop a{
+  color: var(--ink-2);
+  text-decoration: none;
+  font-weight: 600;
+  padding: .5rem .2rem;
+  border-radius: 10px;
+  transition: color .15s ease, background .15s ease;
+}
+.site-header .nav-desktop a:hover{
+  background: rgba(0,0,0,.04);
+  color: var(--ink);
+}
+
+/* CTA (desktop) */
+.site-header .btn-cta{
+  display: none;
+  align-items: center; justify-content: center;
+  padding: .6rem 1rem;
+  font-weight: 700; text-decoration: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+  color: #fff; border: 1px solid transparent;
+  box-shadow: 0 12px 26px rgba(12, 18, 33, .16);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.site-header .btn-cta:hover{ filter: saturate(1.05) brightness(1.03); transform: translateY(-1px); }
+
+/* Header socials */
+.site-header .header-socials{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-header .btn-blog{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  padding: .6rem 1rem;
+  font-weight: 700; 
+  text-decoration: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+  color: #fff; 
+  border: 1px solid transparent;
+  box-shadow: 0 12px 26px rgba(12, 18, 33, .16);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  font-size: 0.92rem;
+}
+
+.site-header .btn-blog:hover{ filter: saturate(1.05) brightness(1.03); transform: translateY(-1px); }
+
+.site-header .social-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: var(--brand-1);
+  text-decoration: none;
+  transition: all .18s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.site-header .social-link:hover{
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}
+
+.site-header .mobile-socials{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.site-header .social-link.mobile{
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  justify-content: flex-start;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* Responsividade do header */
+@media (min-width: 768px) {
+  .site-header .nav-desktop { display: flex; }
+  .site-header .header-socials { display: flex; }
+  .site-header .nav-mobile { display: none; }
+  .site-header .header-bar {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto; /* logo | nav | socials */
+  }
+}
+
+/* Mobile: hamburger + painel */
+.site-header .nav-mobile{
+  margin-left: auto; /* empurra para a direita no mobile */
+}
+.site-header .nav-mobile > summary{
+  list-style: none; cursor: pointer; display: grid; place-items: center;
+  width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--ring);
+  background: var(--surface);
+}
+.site-header .nav-mobile > summary::-webkit-details-marker{display:none}
+
+.site-header .hamburger{
+  width: 18px; height: 12px; position: relative;
+}
+.site-header .hamburger::before,
+.site-header .hamburger::after,
+.site-header .hamburger{ 
+  content: ""; display:block; background: var(--ink);
+  height: 2px; border-radius: 3px; 
+}
+.site-header .hamburger::before{ position:absolute; top:0; left:0; right:0 }
+.site-header .hamburger::after{ position:absolute; bottom:0; left:0; right:0 }
+
+/* Painel */
+.site-header .nav-panel{
+  position: absolute; inset: calc(100% + 8px) 12px auto 12px;
+  display: grid; gap: 8px; padding: 10px; border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--ring);
+  box-shadow: 0 18px 40px rgba(13,18,33,.18), 0 4px 12px rgba(13,18,33,.10);
+}
+.site-header .nav-panel a{
+  padding: .8rem .8rem; border-radius: 10px; font-weight: 600; color: var(--ink-2);
+  text-decoration: none; display: block;
+}
+.site-header .nav-panel a:hover{ background: rgba(0,0,0,.04); color: var(--ink) }
+.site-header .btn-cta.mobile{ display: grid; }
+
+/* Breakpoints */
+@media (min-width: 860px){
+  .site-header .nav-mobile{ display: none; }
+  .site-header .nav-desktop{ display: inline-flex; }
+  .site-header .btn-cta{ display: inline-flex; }
+  .site-header .header-bar{
+    grid-template-columns: auto 1fr auto; /* logo | nav | cta */
+  }
+}
+
+/* ===== BLOCO 1 — HOME (escopo local) ===== */
+.home-hero{
+  --brand-1:#5CC8CB; /* ciano */
+  --brand-2:#CA73B0; /* roxo */
+  --brand-3:#FEAFC2; /* rosa */
+  --ink:#121212;
+  --muted:#5a5a6a;
+  --ring:rgba(0,0,0,.08);
+
+  position: relative;
+  isolation: isolate;
+  color: var(--ink);
+  min-height: 80vh;
+  padding: clamp(40px,8vw,80px) 20px clamp(60px,10vw,120px);
+  background:
+    radial-gradient(1200px 700px at 100% -20%, rgba(202,115,176,.18), transparent 60%),
+    radial-gradient(1000px 650px at 0% 0%, rgba(92,200,203,.18), transparent 60%),
+    #ffffff;
+}
+
+.home-hero__wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+  align-items: center;
+  min-height: calc(100vh - clamp(120px,20vw,240px));
+}
+
+@media (min-width: 960px){
+  .home-hero__wrap{
+    grid-template-columns: 1.08fr .92fr; /* texto | foto */
+  }
+}
+
+/* Marca */
+.home-hero__brand{display:inline-flex;align-items:center;gap:.58rem;text-decoration:none;margin-bottom:.2rem}
+.home-hero__mark{width:34px;height:34px;border-radius:10px;display:block}
+.home-hero__brandtype{font-weight:800;letter-spacing:.2px;background:linear-gradient(90deg,var(--brand-2),var(--brand-1));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Eyebrow, títulos */
+.home-hero__eyebrow{margin:.25rem 0;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-size:.85rem}
+.home-hero__title{
+  margin:.2rem 0 .4rem;
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  line-height:1.12; font-weight:900;
+  background: linear-gradient(90deg, var(--brand-2) 0%, var(--brand-1) 100%);
+  -webkit-background-clip:text; background-clip:text; color: transparent;
+}
+.home-hero__subtitle{margin:0 0 .8rem;max-width:60ch;color:#3a3a42;font-size:1.05rem;line-height:1.6}
+
+/* Chips */
+.home-hero__chips{margin:10px 0 14px}
+.home-hero__chipslabel{display:inline-block;margin:0 0 8px;color:var(--muted);font-size:.9rem}
+.home-hero__chiplist{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  display:inline-flex;align-items:center;gap:.4rem;padding:.56rem .8rem;border-radius:999px;
+  border:1px solid var(--ring);background:#fff;text-decoration:none;font-weight:600;color:#222;
+  box-shadow:0 10px 22px rgba(13,18,33,.06);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.chip:hover{transform:translateY(-1px);box-shadow:0 16px 30px rgba(13,18,33,.12);border-color:rgba(0,0,0,.12)}
+html{scroll-behavior:smooth}
+
+/* CTAs */
+.home-hero__ctas{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.8rem 1.1rem;border-radius:12px;font-weight:800;text-decoration:none;border:1px solid transparent;
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.btn--primary{
+  color:#fff;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));
+  box-shadow:0 16px 36px rgba(13,18,33,.16);
+}
+.btn--primary:hover{transform:translateY(-1px);filter:saturate(1.06) brightness(1.03)}
+.btn--ghost{
+  background:#fff;color:#222;border-color:var(--ring);
+  box-shadow:0 10px 22px rgba(13,18,33,.06);
+}
+.btn--ghost:hover{transform:translateY(-1px);box-shadow:0 16px 30px rgba(13,18,33,.12);border-color:rgba(0,0,0,.12)}
+
+/* Redes */
+.home-hero__socials{display:flex;gap:10px}
+.social{
+  width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+  background:linear-gradient(180deg,#ffffff,rgba(255,255,255,.92));border:1px solid var(--ring);
+  box-shadow:0 10px 22px rgba(13,18,33,.06);transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease
+}
+.social:hover{transform:translateY(-1px);box-shadow:0 16px 30px rgba(13,18,33,.12);border-color:rgba(0,0,0,.12)}
+.social svg{color:#222}
+
+/* Foto + degradê */
+.home-hero__photo{
+  position: relative;
+  min-height: 320px;
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 70% 0%, rgba(202,115,176,.22), transparent 60%),
+    radial-gradient(120% 80% at 30% 100%, rgba(92,200,203,.22), transparent 60%),
+    #f6f7fb;
+  border:1px solid var(--ring);
+  box-shadow:0 26px 56px rgba(13,18,33,.16),0 8px 16px rgba(13,18,33,.10);
+}
+.home-hero__photo img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  mix-blend-mode:multiply; /* cria efeito de degradê sobre a foto */
+  filter:saturate(1.02) contrast(1.02);
+}
+
+/* Layout responsivo */
+.home-hero__copy{max-width:680px}
+@media (max-width: 959px){
+  .home-hero__photo{order:-1;height:52vw;min-height:280px}
+}
+
+
+/* ===== BLOCO 2 — TE AJUDO COM (escopo local) ===== */
+.help2-section{
+  padding: clamp(40px,6vw,80px) 20px;
+  background:
+    radial-gradient(900px 480px at 10% 0%, rgba(92,200,203,.12), transparent 60%),
+    radial-gradient(900px 520px at 100% 0%, rgba(202,115,176,.12), transparent 60%),
+    #ffffff;
+  color:#121212;
+}
+.help2-inner{max-width:1100px;margin:0 auto}
+
+.help2-header{text-align:center;margin-bottom:clamp(20px,4vw,36px)}
+.help2-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#7a7a8a}
+.help2-title{
+  margin:.2rem 0;
+  font-size:clamp(1.6rem,3.2vw,2.3rem);font-weight:700;line-height:1.15;
+  background:linear-gradient(90deg,#CA73B0,#5CC8CB);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.help2-sub{max-width:58ch;margin:0 auto;color:#53535a}
+
+.help2-grid{
+  display:grid;gap:14px;margin-top:clamp(16px,3vw,24px);
+  grid-template-columns:1fr;
+}
+@media (min-width:760px){.help2-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.help2-grid{grid-template-columns:repeat(3,1fr)}}
+
+.help2-card{
+  display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start;
+  padding:16px 18px;border-radius:16px;background:linear-gradient(180deg,#fff,rgba(255,255,255,.95));
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 16px 36px rgba(13,18,33,.10),0 4px 10px rgba(13,18,33,.06);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.help2-card:hover{transform:translateY(-2px);box-shadow:0 22px 48px rgba(13,18,33,.16),0 10px 16px rgba(13,18,33,.10);border-color:rgba(13,18,33,.16)}
+
+.help2-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;color:#fff;background:conic-gradient(from 180deg at 50% 50%,#CA73B0,#5CC8CB,#FEAFC2,#CA73B0)}
+.help2-item-title{margin:2px 0 4px;font-weight:700;color:#1d1d21;font-size:1.02rem}
+.help2-item-text{margin:0;color:#4a4a52;font-size:.95rem;line-height:1.55}
+
+
+
+
+/* ===== BLOCO 3 — QUEM É ANA BORGES? (escopo local) ===== */
+.about-section{
+  padding: clamp(44px,6vw,90px) 20px;
+  background:
+    radial-gradient(900px 520px at 0% 0%, rgba(92,200,203,.10), transparent 60%),
+    radial-gradient(900px 520px at 100% 0%, rgba(202,115,176,.10), transparent 60%),
+    #ffffff;
+  color:#121212;
+}
+.about-inner{max-width:1100px;margin:0 auto}
+.about-grid{display:grid;gap:22px;grid-template-columns:1fr}
+@media (min-width:900px){.about-grid{grid-template-columns:1.1fr .9fr;align-items:center}}
+
+.about-header{margin-bottom:14px}
+.about-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#7a7a8a}
+.about-title{
+  margin:.25rem 0 .35rem;font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:800;line-height:1.15;
+  background:linear-gradient(90deg,#CA73B0,#5CC8CB);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.about-kicker{margin:.2rem 0 .4rem;color:#2b2b32;font-weight:700}
+.about-lead{margin:0 0 .6rem;max-width:60ch;color:#4b4b55;font-size:1.02rem;line-height:1.6}
+
+/* Balões */
+.bubble-list{display:grid;gap:10px;margin-top:8px}
+.bubble{
+  position:relative; display:grid; gap:2px;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.96));
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 14px 30px rgba(13,18,33,.10),0 4px 10px rgba(13,18,33,.06);
+  border-radius:14px; padding:12px 14px;
+}
+.bubble::after{
+  content:""; position:absolute; left:14px; bottom:-8px;
+  width:14px; height:14px; transform:rotate(45deg);
+  background:#fff; border-left:1px solid rgba(0,0,0,.08); border-bottom:1px solid rgba(0,0,0,.08);
+  box-shadow:2px 2px 6px rgba(13,18,33,.06);
+}
+.bubble strong{color:#1e1e22}
+.bubble span{color:#4a4a52}
+
+/* Foto */
+.about-photo{justify-self:center}
+.about-photo img{
+  width:min(420px,88vw); height:auto; display:block;
+  border-radius:20px; object-fit:cover;
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 22px 48px rgba(13,18,33,.16),0 10px 16px rgba(13,18,33,.10);
+}
+
+/* Acessibilidade utilitária */
+.visually-hidden{
+  position:absolute!important; height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px;
+}
+
+
+
+/* ===== BLOCO 4 — ATUAÇÃO EM ===== */
+.atuacao-section {
+  padding: clamp(40px,6vw,70px) 20px;
+  background: #f8f9fb;
+  color: #111;
+}
+
+.atuacao-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.atuacao-header {
+  text-align: center;
+  margin-bottom: clamp(20px,4vw,36px);
+}
+
+.atuacao-eyebrow {
+  font-size: .85rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.atuacao-title {
+  font-size: clamp(1.6rem,3.2vw,2.2rem);
+  font-weight: 700;
+  margin: 6px 0;
+  background: linear-gradient(90deg, #CA73B0, #5CC8CB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.atuacao-sub {
+  max-width: 50ch;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* lista */
+.atuacao-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.atuacao-item {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.atuacao-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.1);
+  border-color: rgba(0,0,0,.12);
+}
+
+.atuacao-item-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.atuacao-item-text {
+  margin: 0;
+  font-size: .96rem;
+  line-height: 1.55;
+  color: #444;
+}
+
+/* responsivo */
+@media (min-width: 720px) {
+  .atuacao-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1040px) {
+  .atuacao-list {
+    grid-template-columns: 1fr;
+  }
+  .atuacao-item {
+    grid-template-columns: 200px 1fr;
+    align-items: start;
+  }
+  .atuacao-item-title {
+    font-size: 1.15rem;
+  }
+}
+
+
+
+/* ===== BLOCO 5 — VALORES (escopo local) ===== */
+.values-section{
+  padding: clamp(40px,6vw,80px) 20px;
+  background:
+    radial-gradient(1000px 480px at 10% 0%, rgba(92,200,203,.16), transparent 60%),
+    radial-gradient(1000px 520px at 100% 0%, rgba(202,115,176,.16), transparent 60%),
+    #0f1220; /* base escura sutil para contraste elegante */
+  color:#0f0f0f;
+}
+.values-inner{max-width:1100px;margin:0 auto}
+
+.values-header{
+  text-align:center;
+  margin-bottom: clamp(20px,4vw,36px);
+}
+.values-eyebrow{
+  font-size:.85rem; letter-spacing:.12em; text-transform:uppercase;
+  color:#7a7a8a;
+}
+.values-title{
+  margin:.25rem 0;
+  font-size: clamp(1.6rem,3.2vw,2.3rem);
+  line-height:1.15;
+  font-weight:700;
+  background: linear-gradient(90deg,#CA73B0,#5CC8CB);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.values-sub{
+  max-width:58ch; margin:0 auto; color:#d9d9df; font-size:1rem;
+}
+
+/* Grid de cards */
+.values-grid{
+  margin-top: clamp(18px,3vw,28px);
+  display:grid; gap:14px;
+  grid-template-columns:1fr;
+}
+@media (min-width:720px){
+  .values-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Card */
+.value-card{
+  position:relative;
+  border-radius:18px;
+  padding:18px 18px 20px;
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.98));
+  border:1px solid rgba(15,15,15,.08);
+  box-shadow: 0 18px 40px rgba(13,18,33,.18), 0 4px 12px rgba(13,18,33,.10);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.value-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px rgba(13,18,33,.22), 0 8px 16px rgba(13,18,33,.12);
+  border-color: rgba(13,18,33,.16);
+}
+
+/* Ícone do card */
+.value-icon{
+  width:48px; height:48px; border-radius:12px;
+  display:grid; place-items:center; color:#fff; margin:0 auto 12px;
+  background: #4A9B9E;
+}
+
+/* Título e texto do card */
+.value-title{
+  margin:4px 0 8px;
+  font-size:1.05rem; font-weight:700; color:#1c1c1f; text-align:center;
+}
+.value-text{
+  margin:0; color:#444; font-size:.96rem; line-height:1.6; text-align:center;
+}
+
+
+
+    
+/* ===== BLOCO 6 — TALVEZ VOCÊ TENHA DÚVIDAS ===== */
+.faq-section {
+  padding: clamp(40px, 6vw, 70px) 20px;
+  background: linear-gradient(135deg, rgba(92,200,203,.08), rgba(202,115,176,.08));
+  border-top: 1px solid rgba(92,200,203,.15);
+  border-bottom: 1px solid rgba(92,200,203,.15);
+  min-height: 100%;
+  position: relative;
+}
+
+.faq-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: clamp(28px, 5vw, 45px);
+}
+
+.faq-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.faq-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0 0 12px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.15;
+}
+
+.faq-sub {
+  max-width: 60ch;
+  margin: 0 auto;
+  font-size: clamp(.95rem, 2.2vw, 1.05rem);
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Lista FAQ em Grid */
+.faq-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .faq-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Items FAQ */
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--ring);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all .2s ease;
+  box-shadow: 0 2px 8px rgba(13,18,33,.04);
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 20px rgba(13,18,33,.1);
+  border-color: rgba(92,200,203,.25);
+}
+
+.faq-item summary {
+  padding: 16px 18px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: .98rem;
+  line-height: 1.4;
+  border-bottom: 1px solid transparent;
+  transition: all .2s ease;
+  list-style: none;
+  position: relative;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  font-weight: 300;
+  color: var(--brand-1);
+  transition: transform .2s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-item summary:hover {
+  background: rgba(92,200,203,.04);
+}
+
+.faq-item[open] summary {
+  border-bottom-color: var(--ring);
+  background: rgba(92,200,203,.06);
+}
+
+.faq-item p {
+  padding: 0 18px 18px;
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: .95rem;
+}
+
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.95);
+  color: #222;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item summary {
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Ícone + / - no summary */
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+  transform: rotate(90deg);
+}
+
+  </style>
+
+</head>
+<body>
+  <!-- CABEÇALHO -->
+<header class="site-header" aria-label="Cabeçalho principal">
+  <div class="header-bar">
+    <!-- LOGO -->
+    <a href="#inicio" class="brand" aria-label="Voltar ao início">
+      <img class="brand-mark" src="logo_ana.svg" alt="Ana Borges" style="width: 140px; height: 60px;" />
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav-desktop" aria-label="Navegação principal">
+      <a href="#home">Início</a>
+      <a href="#quem-e-ana">Sobre</a>
+      <a href="#atuacao">Serviços</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contatos">Contatos</a>
+    </nav>
+
+    <!-- SOCIAL LINKS -->
+    <div class="header-socials">
+      <a class="btn-blog" href="/blog" target="_blank" rel="noopener" aria-label="Acessar blog">
+        Blog
+      </a>
+      <a class="social-link" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
+      </a>
+      <a class="social-link" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
+      </a>
+    </div>
+
+    <!-- NAV MOBILE (details/summary) -->
+    <details class="nav-mobile">
+      <summary aria-label="Abrir menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </summary>
+      <nav class="nav-panel" aria-label="Menu móvel">
+        <a href="#home">Início</a>
+        <a href="#quem-e-ana">Sobre</a>
+        <a href="#atuacao">Serviços</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contatos">Contatos</a>
+        <div class="mobile-socials">
+          <a class="btn-blog mobile" href="/blog" target="_blank" rel="noopener">Blog</a>
+          <a class="social-link mobile" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
+            LinkedIn
+          </a>
+          <a class="social-link mobile" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
+            TikTok
+          </a>
+        </div>
+      </nav>
+    </details>
+  </div>
+</header>
+
+
+<!-- BLOCO 1 — HOME -->
+<section id="home" class="home-hero" aria-labelledby="home-title">
+  <div class="home-hero__wrap">
+    <!-- Coluna texto -->
+    <div class="home-hero__copy">
+      <!-- Logo + marca (logo oficial) -->
+      <a href="#home" class="home-hero__brand" aria-label="Ana Borges — Início">
+      </a>
+
+
+      <p class="home-hero__eyebrow">Bem-vindo(a)!</p>
+
+      <!-- Título / slogan (use um dos textos oficiais) -->
+      <h1 id="home-title" class="home-hero__title">
+        Mais consciência, autonomia e autenticidade
+      </h1>
+      <p class="home-hero__subtitle">
+        Te ajudo a ter uma vida mais consciente, autônoma e autêntica.
+      </p>
+
+      <!-- Chips de seleção — rolam para seções abaixo -->
+      <div class="home-hero__chips" aria-label="Estou buscando">
+        <span class="home-hero__chipslabel">Estou buscando</span>
+        <nav class="home-hero__chiplist" aria-label="Serviços">
+          <a class="chip" href="#servicos-terapia">Terapia</a>
+          <a class="chip" href="#servicos-avaliacao">Avaliação Psicológica</a>
+          <a class="chip" href="#servicos-ingles">Aulas de Inglês</a>
+          <a class="chip" href="#servicos-palestras">Palestras</a>
+        </nav>
+      </div>
+
+      <!-- CTAs: WhatsApp (substitui "não sabe…") + Blog (único botão para conteúdo) -->
+      <div class="home-hero__ctas">
+        <a class="btn btn--primary" 
+           href="https://wa.me/5599999999999?text=Olá%20Ana!%20Estou%20buscando%20(atendimento%20de%20Terapia%20|%20Avaliação%20Psicológica%20|%20Aulas%20de%20Inglês%20|%20Palestras)%20e%20gostaria%20de%20orientações."
+           target="_blank" rel="noopener">
+          Falar no WhatsApp
+        </a>
+        <a class="btn btn--ghost" href="/blog">Ir para o Blog</a>
+      </div>
+
+      <!-- Redes: LinkedIn + TikTok -->
+      <div class="home-hero__socials" aria-label="Redes">
+        <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn" class="social">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="TikTok" class="social">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna imagem (degradê + foto imponente) -->
+    <figure class="home-hero__photo">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Ana Borges — Psicóloga e Neuropsicóloga" loading="eager" />
+    </figure>
+  </div>
+</section>
+
+
+<!-- BLOCO 2 — TE AJUDO COM -->
+<section id="te-ajudo-com" class="help2-section" aria-labelledby="help2-title">
+  <div class="help2-inner">
+    <header class="help2-header">
+      <span class="help2-eyebrow">Serviços & Demandas</span>
+      <h2 id="help2-title" class="help2-title">Te ajudo com</h2>
+      <p class="help2-sub">
+        Acolhimento técnico e humano, com plano de cuidado prático e baseado em evidências.
+      </p>
+    </header>
+
+    <div class="help2-grid">
+      <!-- Neurodiversidade e Altas Habilidades -->
+      <article class="help2-card">
+        <div class="help2-icon" aria-hidden="true">
+          <!-- ícone: cérebro/neuro -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 3a3 3 0 0 0-3 3v.5A3 3 0 0 0 3 9v3a3 3 0 0 0 2 2.83V16a3 3 0 0 0 3 3h1v-7H8a2 2 0 1 1 0-4h1V3H8Zm8 0h-1v4h1a2 2 0 1 1 0 4h-1v7h1a3 3 0 0 0 3-3v-1.17A3 3 0 0 0 21 12V9a3 3 0 0 0-2-2.5V6a3 3 0 0 0-3-3Z"/></svg>
+        </div>
+        <div class="help2-content">
+          <h3 class="help2-item-title">Neurodiversidade e Altas Habilidades</h3>
+          <p class="help2-item-text">
+            Acolhimento e estratégias para TEA, TDAH e outros transtornos do neurodesenvolvimento, altas habilidades e dupla excepcionalidade.
+          </p>
+        </div>
+      </article>
+
+      <!-- Saúde emocional -->
+      <article class="help2-card">
+        <div class="help2-icon" aria-hidden="true">
+          <!-- ícone: coração/saúde -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 21s-6.7-4.35-9.1-8C1.3 10.4 2.1 7.5 4.6 6a4.9 4.9 0 0 1 5.9.9l1.5 1.6 1.5-1.6a4.9 4.9 0 0 1 5.9-.9c2.5 1.5 3.3 4.4 1.7 7-2.4 3.65-9.1 8-9.1 8Z"/></svg>
+        </div>
+        <div class="help2-content">
+          <h3 class="help2-item-title">Saúde emocional</h3>
+          <p class="help2-item-text">
+            Regulação emocional e tratamento para ansiedade e depressão.
+          </p>
+        </div>
+      </article>
+
+      <!-- Relacionamentos e vida social -->
+      <article class="help2-card">
+        <div class="help2-icon" aria-hidden="true">
+          <!-- ícone: pessoas/relações -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M7 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm10 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3ZM7 13a5 5 0 0 0-5 5v1h6v-1a5 5 0 0 1 3-4.58A6.9 6.9 0 0 0 7 13Zm10 0a6.9 6.9 0 0 0-4 1.42A5 5 0 0 1 16 19v1h6v-1a5 5 0 0 0-5-5Z"/></svg>
+        </div>
+        <div class="help2-content">
+          <h3 class="help2-item-title">Relacionamentos e vida social</h3>
+          <p class="help2-item-text">
+            Treino de habilidades sociais, construção de vínculos saudáveis e equilíbrio entre vida pessoal e profissional.
+          </p>
+        </div>
+      </article>
+
+      <!-- Organização e planejamento -->
+      <article class="help2-card">
+        <div class="help2-icon" aria-hidden="true">
+          <!-- ícone: calendário/tempo -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v2H2V6a2 2 0 0 1 2-2h3V2Zm15 8H2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V10ZM6 14h5v5H6v-5Z"/></svg>
+        </div>
+        <div class="help2-content">
+          <h3 class="help2-item-title">Organização e planejamento</h3>
+          <p class="help2-item-text">
+            Organização de rotina, gestão de tempo, planejamento diário e treino de funções executivas.
+          </p>
+        </div>
+      </article>
+
+      <!-- Autoconhecimento e prática diária -->
+      <article class="help2-card">
+        <div class="help2-icon" aria-hidden="true">
+          <!-- ícone: bússola/propósito -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.5 6.5-2.16 5.06L8.3 15.5l2.16-5.06L15.5 8.5Z"/></svg>
+        </div>
+        <div class="help2-content">
+          <h3 class="help2-item-title">Autoconhecimento e prática diária</h3>
+          <p class="help2-item-text">
+            Compreensão do seu perfil cognitivo e emocional, psicoeducação e criação de uma vida valorosa.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- BLOCO 3 — QUEM É ANA BORGES? -->
+<section id="quem-e-ana" class="about-section" aria-labelledby="about-title">
+  <div class="about-inner">
+    <div class="about-grid">
+      <!-- Texto -->
+      <div class="about-copy">
+        <header class="about-header">
+          <span class="about-eyebrow">Apresentação</span>
+          <h2 id="about-title" class="about-title">Quem é Ana Borges?</h2>
+          <p class="about-kicker">“Quem sou eu?”</p>
+        
+        </header>
+
+        <!-- Balões com descrição profissional -->
+<div class="bubble-list" role="list">
+  <div class="bubble" role="listitem">
+    <strong>Formação</strong>
+    <span>Neuropsicóloga pela PUC-RS e psicóloga formada pela UFMG</span>
+  </div>
+  <div class="bubble" role="listitem">
+    <strong>Atuação</strong>
+    <span>Psicoterapia individual, avaliação psicológica, orientação familiar e grupos terapêuticos</span>
+  </div>
+  <div class="bubble" role="listitem">
+    <strong>Abordagem</strong>
+    <span>Baseada em evidências, terapias comportamentais e cognitivas, com postura diretiva e próxima</span>
+  </div>
+  <div class="bubble" role="listitem">
+    <strong>Estilo</strong>
+    <span>Converso, questiono e proponho reflexões. Quero estar junto no processo</span>
+  </div>
+  <div class="bubble" role="listitem">
+    <strong>Além do consultório</strong>
+    <span>Apaixonada por Psicologia, família, natureza, moda e design — sensível, profunda e sagaz</span>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Foto -->
+      <figure class="about-photo">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Foto de Ana Borges" loading="lazy" />
+        <figcaption class="visually-hidden">Retrato de Ana Borges</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOCO 4 — ATUAÇÃO EM -->
+<section id="atuacao" class="atuacao-section" aria-labelledby="atuacao-title">
+  <div class="atuacao-inner">
+    <header class="atuacao-header">
+      <span class="atuacao-eyebrow">Serviços</span>
+      <h2 id="atuacao-title" class="atuacao-title">Atuação em</h2>
+      <p class="atuacao-sub">
+        Conheça as principais frentes de atendimento e atividades desenvolvidas na clínica.
+      </p>
+    </header>
+
+    <div class="atuacao-list">
+      <!-- item 1 -->
+      <div class="atuacao-item">
+        <h3 class="atuacao-item-title">Psicoterapia individual</h3>
+        <p class="atuacao-item-text">
+          Atendimento personalizado para trabalhar questões emocionais, comportamentais e de autoconhecimento em um espaço seguro.
+        </p>
+      </div>
+
+      <!-- item 2 -->
+      <div class="atuacao-item">
+        <h3 class="atuacao-item-title">Avaliação neuropsicológica</h3>
+        <p class="atuacao-item-text">
+          Investigação das funções cognitivas (memória, atenção, linguagem, raciocínio) para diagnóstico, orientação e intervenções adequadas.
+        </p>
+      </div>
+
+      <!-- item 3 -->
+      <div class="atuacao-item">
+        <h3 class="atuacao-item-title">Orientação familiar</h3>
+        <p class="atuacao-item-text">
+          Apoio a famílias no manejo de desafios cotidianos, comunicação saudável e fortalecimento dos vínculos.
+        </p>
+      </div>
+
+      <!-- item 4 -->
+      <div class="atuacao-item">
+        <h3 class="atuacao-item-title">Grupos terapêuticos</h3>
+        <p class="atuacao-item-text">
+          Encontros coletivos que favorecem a troca de experiências, suporte mútuo e desenvolvimento de habilidades socioemocionais.
+        </p>
+      </div>
+
+      <!-- item 5 -->
+      <div class="atuacao-item">
+        <h3 class="atuacao-item-title">Palestras e workshops</h3>
+        <p class="atuacao-item-text">
+          Ações de psicoeducação para empresas, escolas e comunidades, promovendo saúde mental e bem-estar coletivo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- BLOCO 5 — VALORES -->
+<section id="valores" class="values-section" aria-labelledby="values-title">
+  <div class="values-inner">
+    <header class="values-header">
+      <span class="values-eyebrow">Valores</span>
+      <h2 id="values-title" class="values-title">O que guia nosso cuidado</h2>
+      <p class="values-sub">
+        Princípios que orientam cada atendimento e toda a experiência na clínica.
+      </p>
+    </header>
+
+    <div class="values-grid">
+      <!-- Card 1 -->
+      <article class="value-card">
+        <div class="value-icon" aria-hidden="true">
+          <!-- Ícone “insight/consciência” -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 21h6v-2H9v2Zm3-19a8 8 0 0 0-4 15v1h8v-1a8 8 0 0 0-4-15Zm0 2a6 6 0 0 1 3 11.2V17h-6v-1.8A6 6 0 0 1 12 4Z"/></svg>
+        </div>
+        <h3 class="value-title">Consciência</h3>
+        <p class="value-text">
+          Promovemos reflexão segura para reconhecer padrões, sentimentos e necessidades reais — o primeiro passo para mudanças duradouras.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="value-card">
+        <div class="value-icon" aria-hidden="true">
+          <!-- Ícone “autonomia” -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5v3H5l7 7 7-7h-2V7a5 5 0 0 0-5-5Zm0 2a3 3 0 0 1 3 3v3H9V7a3 3 0 0 1 3-3Zm-7 16h14v2H5v-2Z"/></svg>
+        </div>
+        <h3 class="value-title">Autonomia</h3>
+        <p class="value-text">
+          Fortalecemos decisões conscientes: você como agente do próprio processo, com ferramentas práticas para o dia a dia.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="value-card">
+        <div class="value-icon" aria-hidden="true">
+          <!-- Ícone “autenticidade” -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4l-10 5Z"/></svg>
+        </div>
+        <h3 class="value-title">Autenticidade</h3>
+        <p class="value-text">
+          Um espaço acolhedor para ser quem você é — sem rótulos — alinhando discurso, emoções e atitudes com seus valores.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- BLOCO 6 — TALVEZ VOCÊ TENHA DÚVIDAS -->
+<section id="faq" class="faq-section" aria-labelledby="faq-title">
+  <div class="faq-inner">
+    <header class="faq-header">
+      <span class="faq-eyebrow">FAQ</span>
+      <h2 id="faq-title" class="faq-title">Talvez você tenha dúvidas</h2>
+      <p class="faq-sub">
+        Separei respostas para as perguntas mais comuns. Assim você pode se sentir mais seguro antes de agendar.
+      </p>
+    </header>
+
+    <div class="faq-list">
+      <!-- Pergunta 1 -->
+      <details class="faq-item">
+        <summary>Qual o valor da sessão?</summary>
+        <p>O valor da sessão é tabelado pelo Conselho Federal de Psicologia e será informado no primeiro contato.</p>
+      </details>
+
+      <!-- Pergunta 2 -->
+      <details class="faq-item">
+        <summary>Aceita algum convênio?</summary>
+        <p>Não, mas emito Recibo Saúde para reembolso.</p>
+      </details>
+
+      <!-- Pergunta 3 -->
+      <details class="faq-item">
+        <summary>Você atende casais?</summary>
+        <p>Não.</p>
+      </details>
+
+      <!-- Pergunta 4 -->
+      <details class="faq-item">
+        <summary>Você atende crianças?</summary>
+        <p>Somente com Altas Habilidades e/ou Dupla Excepcionalidade.</p>
+      </details>
+
+      <!-- Pergunta 5 -->
+      <details class="faq-item">
+        <summary>Qual a frequência e a duração das sessões?</summary>
+        <p>Elas ocorrem semanalmente e duram 50 minutos. Sessões quinzenais ou mensais podem ser discutidas a depender do caso e da fase de tratamento.</p>
+      </details>
+
+      <!-- Pergunta 6 -->
+      <details class="faq-item">
+        <summary>Terapia dura para sempre?</summary>
+        <p>Não! Trabalho com o modelo de alta, em que a pessoa é liberada dos atendimentos quando os objetivos terapêuticos são atingidos e ela se sente segura para caminhar com autonomia.</p>
+      </details>
+
+      <!-- Pergunta 7 -->
+      <details class="faq-item">
+        <summary>Você atende online ou presencial?</summary>
+        <p>Os atendimentos são, em grande maioria, online. Atendimentos presenciais a combinar.</p>
+      </details>
+
+      <!-- Pergunta 8 -->
+      <details class="faq-item">
+        <summary>Qual o valor da avaliação psicológica?</summary>
+        <p>O valor da avaliação será informado no primeiro contato.</p>
+      </details>
+
+      <!-- Pergunta 9 -->
+      <details class="faq-item">
+        <summary>Quem deve fazer avaliação psicológica?</summary>
+        <p>Em breve mais informações sobre este tema.</p>
+      </details>
+
+      <!-- Pergunta 10 -->
+      <details class="faq-item">
+        <summary>Qual o público dos grupos terapêuticos?</summary>
+        <p>Em breve mais informações sobre este tema.</p>
+      </details>
+
+      <!-- Pergunta 11 -->
+      <details class="faq-item">
+        <summary>Qual a duração da orientação familiar?</summary>
+        <p>Em breve mais informações sobre este tema.</p>
+      </details>
+
+      <!-- Pergunta 12 -->
+      <details class="faq-item">
+        <summary>Como saber se a terapia vai dar certo?</summary>
+        <p>Em breve mais informações sobre este tema.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- BLOCO 7 “CONTATOS”  -->
+  <section id="contatos" class="contact-section" aria-labelledby="contatos-title">
+    <div class="contact-wrap">
+      <div class="contact-inner">
+        <!-- Título -->
+        <header class="contact-header">
+          <span class="contact-eyebrow">Contato</span>
+          <h2 id="contatos-title" class="contact-title">Vamos conversar e acompanhar as novidades?</h2>
+          <p class="contact-sub">Veja o post mais recente do blog e conecte-se pelas redes oficiais. Mantemos conteúdos úteis e comunicados importantes por lá.</p>
+        </header>
+
+        <!-- Posts do Blog (destaque) -->
+        <section class="blog-feature" aria-label="Posts em destaque">
+          <!-- Post 1 -->
+          <div class="blog-card">
+            <div class="blog-media" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" alt="Pessoa praticando meditação para lidar com ansiedade">
+            </div>
+            <div class="blog-body">
+              <div class="blog-kicker"><span class="dot"></span> Blog • Psicoeducação</div>
+              <h3 class="blog-title">Como diferenciar ansiedade clínica de estresse do dia a dia</h3>
+              <p class="blog-excerpt">Um guia rápido com sinais de alerta, quando buscar ajuda e práticas baseadas em evidências para o cuidado contínuo.</p>
+              <div class="blog-actions">
+                <a class="btn btn-primary" href="/blog/como-diferenciar-ansiedade" aria-label="Ler post completo no blog">Ler artigo</a>
+                <a class="btn btn-ghost" href="/blog" aria-label="Abrir o blog">Ver todos os posts</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 2 -->
+          <div class="blog-card">
+            <div class="blog-media" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" alt="Pessoa praticando autocuidado com momento de relaxamento">
+            </div>
+            <div class="blog-body">
+              <div class="blog-kicker"><span class="dot"></span> Blog • Bem-estar</div>
+              <h3 class="blog-title">5 práticas de autocuidado que realmente funcionam</h3>
+              <p class="blog-excerpt">Estratégias baseadas em evidências para incluir o autocuidado genuíno na rotina sem cair nas armadilhas do mercado.</p>
+              <div class="blog-actions">
+                <a class="btn btn-primary" href="/blog/praticas-autocuidado" aria-label="Ler post completo no blog">Ler artigo</a>
+                <a class="btn btn-ghost" href="/blog" aria-label="Abrir o blog">Ver todos os posts</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 3 -->
+          <div class="blog-card">
+            <div class="blog-media" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" alt="Duas pessoas conversando sobre relacionamentos saudáveis">
+            </div>
+            <div class="blog-body">
+              <div class="blog-kicker"><span class="dot"></span> Blog • Relacionamentos</div>
+              <h3 class="blog-title">Limites saudáveis em relacionamentos: guia prático</h3>
+              <p class="blog-excerpt">Como estabelecer, comunicar e manter limites claros para construir relacionamentos mais saudáveis e autênticos.</p>
+              <div class="blog-actions">
+                <a class="btn btn-primary" href="/blog/limites-relacionamentos" aria-label="Ler post completo no blog">Ler artigo</a>
+                <a class="btn btn-ghost" href="/blog" aria-label="Abrir o blog">Ver todos os posts</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 4 -->
+          <div class="blog-card">
+            <div class="blog-media" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" alt="Pessoa dormindo tranquilamente para boa qualidade do sono">
+            </div>
+            <div class="blog-body">
+              <div class="blog-kicker"><span class="dot"></span> Blog • Saúde Mental</div>
+              <h3 class="blog-title">A ciência do sono: como melhorar sua qualidade de descanso</h3>
+              <p class="blog-excerpt">Descobertas recentes sobre os ciclos do sono e técnicas comprovadas para transformar suas noites e impactar sua saúde mental.</p>
+              <div class="blog-actions">
+                <a class="btn btn-primary" href="/blog/ciencia-sono" aria-label="Ler post completo no blog">Ler artigo</a>
+                <a class="btn btn-ghost" href="/blog" aria-label="Abrir o blog">Ver todos os posts</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Redes Sociais (fora do box) -->
+    <section class="socials socials-outside" aria-label="Redes sociais">
+      <h3 class="socials-title">Me encontre nas redes sociais</h3>
+      <nav class="social-grid">
+        <!-- Instagram -->
+        <a class="social-card" href="https://www.instagram.com/SEU-USUARIO" target="_blank" rel="noopener" aria-label="Abrir Instagram">
+          <div class="icon icon-instagram" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.59.96 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.96-.5 2.66a5.36 5.36 0 0 1-1.24 1.92 5.36 5.36 0 0 1-1.92 1.24c-.7.26-1.49.45-2.66.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.96-.24-2.66-.5a5.36 5.36 0 0 1-1.92-1.24A5.36 5.36 0 0 1 .5 19.2c-.26-.7-.45-1.49-.5-2.66C-.06 15.27-.07 14.9-.07 11.7s.01-3.58.07-4.85c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.59-.6 1.2-.96 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.42 2.21 8.8 2.2 12 2.2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
+          </div>
+          <div>
+            <p class="social-title">Instagram</p>
+            <p class="social-desc">Bastidores, rotina e conteúdos práticos</p>
+          </div>
+        </a>
+
+        <!-- TikTok -->
+        <a class="social-card" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="Abrir TikTok">
+          <div class="icon icon-tiktok" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
+          </div>
+          <div>
+            <p class="social-title">TikTok</p>
+            <p class="social-desc">Vídeos rápidos e dicas</p>
+          </div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="social-card" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener" aria-label="Abrir LinkedIn">
+          <div class="icon icon-linkedin" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
+          </div>
+          <div>
+            <p class="social-title">LinkedIn</p>
+            <p class="social-desc">Artigos, agenda e bastidores profissionais</p>
+          </div>
+        </a>
+
+        <!-- YouTube -->
+        <a class="social-card" href="https://www.youtube.com/@SEU-CANAL" target="_blank" rel="noopener" aria-label="Abrir YouTube">
+          <div class="icon icon-youtube" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32 32 0 0 0 0 12a32 32 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.8.5 9.3.5 9.3.5s7.5 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32 32 0 0 0 24 12a32 32 0 0 0-.5-5.8ZM9.8 15.5v-7l6.2 3.5-6.2 3.5Z"/></svg>
+          </div>
+          <div>
+            <p class="social-title">YouTube</p>
+            <p class="social-desc">Aulas, lives e conteúdo aprofundado</p>
+          </div>
+        </a>
+      </nav>
+    </section>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="logo_ana.svg" alt="Ana Borges Psicóloga" width="120" height="auto">
+      </div>
+      
+      <div class="footer-grid">
+        <!-- Sobre -->
+        <div class="footer-col">
+          <h4>Sobre</h4>
+          <p>Atendimento psicológico, psicoeducação e produção de conteúdo. Espaço seguro e acolhedor para desenvolvimento pessoal.</p>
+        </div>
+
+        <!-- Links rápidos -->
+        <div class="footer-col">
+          <h4>Links rápidos</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contatos">Contatos</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato e redes -->
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@anaborgespsico.com">contato@anaborgespsico.com</a></li>
+            <li><a href="https://wa.me/5599999999999" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+          <div class="footer-socials">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/SEU-USUARIO" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.59.96 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.96-.5 2.66a5.36 5.36 0 0 1-1.24 1.92 5.36 5.36 0 0 1-1.92 1.24c-.7.26-1.49.45-2.66.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.96-.24-2.66-.5a5.36 5.36 0 0 1-1.92-1.24A5.36 5.36 0 0 1 .5 19.2c-.26-.7-.45-1.49-.5-2.66C-.06 15.27-.07 14.9-.07 11.7s.01-3.58.07-4.85c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.59-.6 1.2-.96 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.42 2.21 8.8 2.2 12 2.2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" aria-label="TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@SEU-CANAL" target="_blank" aria-label="YouTube">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32 32 0 0 0 0 12a32 32 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.8.5 9.3.5 9.3.5s7.5 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32 32 0 0 0 24 12a32 32 0 0 0-.5-5.8ZM9.8 15.5v-7l6.2 3.5-6.2 3.5Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        &copy; 2025 Ana Borges Psicologia. Todos os direitos reservados. CRP 00/000000
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
