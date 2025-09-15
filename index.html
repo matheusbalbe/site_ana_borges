@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="logo_ana.svg">
+  <link rel="icon" type="image/svg+xml" href="logo_ana_roxa.svg">
   <link rel="icon" type="image/png" href="logo_ana.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -479,7 +479,28 @@ html{scroll-behavior:smooth}
 }
 .help2-inner{max-width:1100px;margin:0 auto}
 
-.help2-header{text-align:center;margin-bottom:clamp(20px,4vw,36px)}
+.help2-header{
+  text-align:center;
+  margin-bottom:clamp(20px,4vw,36px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+}
+
+.help2-header.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .help2-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#7a7a8a}
 .help2-title{
   margin:.2rem 0;
@@ -502,7 +523,26 @@ html{scroll-behavior:smooth}
   border:1px solid rgba(0,0,0,.08);
   box-shadow:0 16px 36px rgba(13,18,33,.10),0 4px 10px rgba(13,18,33,.06);
   transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-fill-mode: forwards;
 }
+
+.help2-card.animate-in {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .help2-card:hover{transform:translateY(-2px);box-shadow:0 22px 48px rgba(13,18,33,.16),0 10px 16px rgba(13,18,33,.10);border-color:rgba(13,18,33,.16)}
 
 .help2-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;color:#fff;background:conic-gradient(from 180deg at 50% 50%,#CA73B0,#5CC8CB,#FEAFC2,#CA73B0)}
@@ -516,9 +556,8 @@ html{scroll-behavior:smooth}
 .about-section{
   padding: clamp(44px,6vw,90px) 20px;
   background:
-    radial-gradient(900px 520px at 0% 0%, rgba(92,200,203,.10), transparent 60%),
-    radial-gradient(900px 520px at 100% 0%, rgba(202,115,176,.10), transparent 60%),
-    #ffffff;
+    linear-gradient(135deg, rgba(254,175,194,.06) 0%, rgba(202,115,176,.08) 50%, rgba(92,200,203,.06) 100%),
+    #fafafa;
   color:#121212;
 }
 .about-inner{max-width:1100px;margin:0 auto}
@@ -746,8 +785,11 @@ html{scroll-behavior:smooth}
     
 /* ===== BLOCO 6 — TALVEZ VOCÊ TENHA DÚVIDAS ===== */
 .faq-section {
-  padding: clamp(40px, 6vw, 70px) 20px;
-  background: linear-gradient(135deg, rgba(92,200,203,.08), rgba(202,115,176,.08));
+  padding: clamp(48px, 6vw, 80px) 20px;
+  background: 
+    radial-gradient(900px 480px at 10% 0%, rgba(92,200,203,.12), transparent 60%),
+    radial-gradient(900px 520px at 100% 0%, rgba(202,115,176,.12), transparent 60%),
+    #ffffff;
   border-top: 1px solid rgba(92,200,203,.15);
   border-bottom: 1px solid rgba(92,200,203,.15);
   min-height: 100%;
@@ -928,7 +970,7 @@ html{scroll-behavior:smooth}
   <div class="header-bar">
     <!-- LOGO -->
     <a href="#inicio" class="brand" aria-label="Voltar ao início">
-      <img class="brand-mark" src="logo_ana.svg" alt="Ana Borges" style="width: 140px; height: 60px;" />
+      <img class="brand-mark" src="Logo_ana_roxa.svg" alt="Ana Borges" style="width: 140px; height: 60px;" />
     </a>
 
     <!-- NAV DESKTOP -->
@@ -1016,10 +1058,12 @@ html{scroll-behavior:smooth}
       <div class="home-hero__ctas">
         <a class="btn btn--primary" 
            href="https://wa.me/5599999999999?text=Olá%20Ana!%20Estou%20buscando%20(atendimento%20de%20Terapia%20|%20Avaliação%20Psicológica%20|%20Aulas%20de%20Inglês%20|%20Palestras)%20e%20gostaria%20de%20orientações."
-           target="_blank" rel="noopener">
+           target="_blank" rel="noopener"
+           style="background: #4A9B9E; color: #fff;">
+      
           Falar no WhatsApp
         </a>
-        <a class="btn btn--ghost" href="/blog">Ir para o Blog</a>
+        <a class="btn btn--ghost" href="/blog" style="background: #CA73B0; color: #fff;">Ir para o Blog</a>
       </div>
 
       <!-- Redes: LinkedIn + TikTok -->
@@ -1509,7 +1553,7 @@ html{scroll-behavior:smooth}
     <div class="footer-inner">
       <!-- Logo -->
       <div class="footer-logo">
-        <img src="logo_ana.svg" alt="Ana Borges Psicóloga" width="120" height="auto">
+        <img src="logo_ana_roxa.svg" alt="Ana Borges Psicóloga" width="120" height="auto">
       </div>
       
       <div class="footer-grid">
@@ -1563,5 +1607,50 @@ html{scroll-behavior:smooth}
       </div>
     </div>
   </footer>
+
+  <script>
+    // Intersection Observer para animar a entrada da seção 2
+    const observeSection2 = () => {
+      const header = document.querySelector('.help2-header');
+      const cards = document.querySelectorAll('.help2-card');
+      
+      // Observer para o header
+      const headerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            headerObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -30px 0px'
+      });
+      
+      // Observer para os cards
+      const cardsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Adiciona delay progressivo para cada card
+            setTimeout(() => {
+              entry.target.classList.add('animate-in');
+            }, index * 150); // 150ms de delay entre cada card
+            
+            cardsObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      // Observar elementos
+      if (header) headerObserver.observe(header);
+      cards.forEach(card => cardsObserver.observe(card));
+    };
+    
+    // Inicializar quando o DOM estiver pronto
+    document.addEventListener('DOMContentLoaded', observeSection2);
+  </script>
 </body>
 </html>
