@@ -10,958 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="Logo_ana_roxa.svg">
   <link rel="icon" type="image/png" href="logo_ana.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* ====== RESET CURTO ====== */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0f1220;color:#0b0b0b}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
 
-    /* ====== TOKENS (ajuste para paleta da marca) ====== */
-    :root{
-      --bg: transparent;             /* fundo da página (sem cor) */
-      --surface: #ffffff;            /* cartões claros */
-      --ink: #141414;                /* texto principal */
-      --muted: #5a5a6a;              /* texto secundário */
-      --brand-1: #5CC8CB;            /* ciano brand */
-      --brand-2: #CA73B0;            /* roxo brand */
-      --brand-3: #FEAFC2;            /* rosa brand */
-      --ring: rgba(20,20,20,.10);
-      --shadow: 0 18px 40px rgba(13,18,33,.22), 0 4px 12px rgba(13,18,33,.12);
-      --radius-xl: 22px;
-      --radius-lg: 16px;
-    }
-
-    body{background:radial-gradient(1200px 600px at 10% -5%, rgba(92,200,203,.18), transparent 60%),
-                       radial-gradient(1100px 600px at 100% 0%, rgba(202,115,176,.18), transparent 60%),
-                       var(--bg)}
-
-    /* ====== BLOCO CONTATOS ====== */
-    .contact-section{
-      padding:clamp(28px,4vw,48px) 16px;
-      min-height: 100vh;
-      position: relative;
-    }
-    .contact-wrap{
-      max-width:1500px;
-      margin-inline:auto;
-      background:linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.9));
-      border:1px solid var(--ring);
-      border-radius:var(--radius-xl);
-      box-shadow:var(--shadow);
-      backdrop-filter:saturate(1.2) blur(6px);
-      min-height: calc(100vh - clamp(56px,8vw,96px));
-      display: flex;
-      flex-direction: column;
-    }
-    .contact-inner{
-      padding:clamp(20px,3.6vw,36px);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* Título */
-    .contact-header{display:grid;gap:.5rem;margin-bottom:clamp(18px,2.8vw,22px);text-align:center}
-    .contact-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-    .contact-title{font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.15;margin:0;background:linear-gradient(90deg,var(--brand-2),var(--brand-1));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .contact-sub{max-width:56ch;margin:0 auto;color:#333;font-size:clamp(.95rem,2.2vw,1.05rem);}
-
-    /* Posts do Blog (grid de 4 posts) */
-    .blog-feature{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
-    .blog-card{position:relative;overflow:hidden;border-radius:var(--radius-lg);border:1px solid var(--ring);background:var(--surface);display:flex;flex-direction:column;height:100%}
-    .blog-media{aspect-ratio:16/9;background:linear-gradient(135deg, rgba(92,200,203,.25), rgba(202,115,176,.25));display:grid;place-items:center;flex-shrink:0}
-    .blog-media img{width:100%;height:100%;object-fit:cover}
-    .blog-media .ph{font-weight:700;opacity:.35}
-    .blog-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex-grow:1}
-    .blog-kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
-    .dot{width:6px;height:6px;border-radius:999px;background:linear-gradient(135deg,var(--brand-2),var(--brand-1))}
-    .blog-title{margin:.35rem 0 .25rem;font-size:clamp(1.05rem,2.6vw,1.2rem);line-height:1.25;color:var(--ink)}
-    .blog-excerpt{margin:0 0 auto;color:#444;font-size:.95rem;line-height:1.5;flex-grow:1}
-    .blog-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--ring);padding:.72rem 1rem;border-radius:12px;font-weight:600;transition:all .2s ease}
-    .btn-primary{background:#4A9B9E;color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(74,155,158,.15)}
-    .btn-primary:hover{background:#3A8285;transform:translateY(-1px);box-shadow:0 4px 16px rgba(74,155,158,.25)}
-    .btn-ghost{background:#fff;color:#555;border-color:rgba(20,20,20,.12)}
-    .btn-ghost:hover{background:#f8f9fa;border-color:rgba(20,20,20,.18);transform:translateY(-1px)}
-
-    /* Redes Sociais (exatamente 4) */
-    .socials{margin-top:clamp(18px,3vw,26px)}
-    .socials-title{font-size:clamp(1.05rem,2.2vw,1.2rem);color:#2b2b2b;margin:0 0 10px;text-align:center}
-    .social-grid{display:grid;grid-template-columns:1fr;gap:12px}
-    .social-card{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;background:linear-gradient(180deg,#ffffff,rgba(255,255,255,.92));border:1px solid var(--ring);border-radius:14px;padding:12px 14px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
-    .social-card:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(13,18,33,.16),0 8px 12px rgba(13,18,33,.08);border-color:rgba(13,18,33,.18)}
-    .icon{
-      width:48px;height:48px;border-radius:12px;display:grid;place-items:center;color:#fff;
-      background:conic-gradient(from 180deg at 50% 50%, var(--brand-2), var(--brand-1), var(--brand-3), var(--brand-2));
-    }
-    /* Cores originais das redes sociais */
-    .icon-instagram{
-      background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    }
-    .icon-tiktok{
-      background:#000;
-    }
-    .icon-linkedin{
-      background:#0077b5;
-    }
-    .icon-youtube{
-      background:#ff0000;
-    }
-    .social-title{font-weight:700;color:#222;margin:0 0 2px;font-size:1rem}
-    .social-desc{color:var(--muted);font-size:.92rem;margin:0}
-
-    /* Redes sociais fora do box */
-    .socials-outside {
-      max-width: 1500px;
-      margin: clamp(24px, 4vw, 40px) auto 0;
-      padding: 0 16px;
-    }
-    .socials-outside .socials-title {
-      text-align: center;
-      margin-bottom: clamp(16px, 3vw, 24px);
-    }
-
-    /* Rodapé */
-    .footer{background:linear-gradient(120deg,#CA73B0,#5CC8CB);color:#fff;padding:clamp(32px,4vw,48px) 20px}
-    .footer-inner{max-width:1100px;margin-inline:auto;display:grid;gap:28px}
-    .footer-logo{text-align:center;margin-bottom:8px}
-    .footer-logo img{max-width:120px;height:auto;opacity:.9}
-    .footer-grid{display:grid;grid-template-columns:1fr;gap:28px}
-    .footer-col h4{margin:0 0 12px;font-size:1.05rem;font-weight:700}
-    .footer-col p{margin:0;font-size:.95rem;line-height:1.6;opacity:.9}
-    .footer-col ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-    .footer-col a{color:#fff;text-decoration:none;font-size:.95rem;transition:opacity .2s ease}
-    .footer-col a:hover{opacity:.8}
-    .footer-socials{display:flex;gap:12px;margin-top:16px}
-    .footer-socials a{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,.1);transition:background .2s ease}
-    .footer-socials a:hover{background:rgba(255,255,255,.25)}
-    .footer-copy{border-top:1px solid rgba(255,255,255,.15);margin-top:28px;padding-top:20px;text-align:center;font-size:.85rem;color:#f0f0f0}
-
-    /* Responsivo */
-    @media (min-width:720px){
-      .blog-feature{grid-template-columns:repeat(2,1fr);gap:18px}
-      .blog-body{padding:18px 18px 20px}
-      .social-grid{grid-template-columns:repeat(2,1fr)}
-      .footer-grid{grid-template-columns:repeat(3,1fr)}
-    }
-    @media (min-width:1040px){
-      .blog-feature{grid-template-columns:repeat(4,1fr);gap:20px}
-      .social-grid{grid-template-columns:repeat(4,1fr)}
-    }
-
-/* ===== CABEÇALHO (escopo local) ===== */
-.site-header {
-  --brand-1: #5CC8CB; /* ciano */
-  --brand-2: #CA73B0; /* roxo */
-  --ink: #111;
-  --ink-2: #4a4a4a;
-  --surface: rgba(255,255,255,.82);
-  --ring: rgba(0,0,0,.08);
-
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: saturate(1.15) blur(8px);
-  border-bottom: 1px solid var(--ring);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.68));
-}
-
-.site-header .header-bar{
-  max-width: 1200px;
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  align-items: center;
-  gap: 14px;
-  padding: clamp(10px, 2vw, 14px) 16px;
-}
-
-/* Marca */
-.site-header .brand{
-  display: inline-flex; align-items: center; gap: .6rem;
-  text-decoration: none;
-}
-.site-header .brand-mark{width:36px;height:36px;display:block;border-radius:10px}
-.site-header .brand-type{
-  font-weight: 700; letter-spacing: .2px; color: var(--ink);
-  font-size: clamp(1rem, 2.2vw, 1.08rem);
-  background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-
-/* Navegação desktop */
-.site-header .nav-desktop{
-  display: none; 
-  justify-self: center;
-  gap: 1.2rem;
-}
-.site-header .nav-desktop a{
-  color: var(--ink-2);
-  text-decoration: none;
-  font-weight: 600;
-  padding: .5rem .2rem;
-  border-radius: 10px;
-  transition: color .15s ease, background .15s ease;
-}
-.site-header .nav-desktop a:hover{
-  background: rgba(0,0,0,.04);
-  color: var(--ink);
-}
-
-/* CTA (desktop) */
-.site-header .btn-cta{
-  display: none;
-  align-items: center; justify-content: center;
-  padding: .6rem 1rem;
-  font-weight: 700; text-decoration: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
-  color: #fff; border: 1px solid transparent;
-  box-shadow: 0 12px 26px rgba(12, 18, 33, .16);
-  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
-}
-.site-header .btn-cta:hover{ filter: saturate(1.05) brightness(1.03); transform: translateY(-1px); }
-
-/* Header socials */
-.site-header .header-socials{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.site-header .btn-blog{
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  padding: .6rem 1rem;
-  font-weight: 700; 
-  text-decoration: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
-  color: #fff; 
-  border: 1px solid transparent;
-  box-shadow: 0 12px 26px rgba(12, 18, 33, .16);
-  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
-  font-size: 0.92rem;
-}
-
-.site-header .btn-blog:hover{ filter: saturate(1.05) brightness(1.03); transform: translateY(-1px); }
-
-.site-header .social-link{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  color: var(--brand-1);
-  text-decoration: none;
-  transition: all .18s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.site-header .social-link:hover{
-  background: rgba(255,255,255,0.2);
-  transform: translateY(-1px);
-}
-
-.site-header .mobile-socials{
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.site-header .social-link.mobile{
-  width: auto;
-  height: auto;
-  padding: 8px 12px;
-  justify-content: flex-start;
-  gap: 8px;
-  background: rgba(255,255,255,0.05);
-}
-
-/* Responsividade do header */
-@media (min-width: 768px) {
-  .site-header .nav-desktop { display: flex; }
-  .site-header .header-socials { display: flex; }
-  .site-header .nav-mobile { display: none; }
-  .site-header .header-bar {
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr auto; /* logo | nav | socials */
-  }
-}
-
-/* Mobile: hamburger + painel */
-.site-header .nav-mobile{
-  margin-left: auto; /* empurra para a direita no mobile */
-}
-.site-header .nav-mobile > summary{
-  list-style: none; cursor: pointer; display: grid; place-items: center;
-  width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--ring);
-  background: var(--surface);
-}
-.site-header .nav-mobile > summary::-webkit-details-marker{display:none}
-
-.site-header .hamburger{
-  width: 18px; height: 12px; position: relative;
-}
-.site-header .hamburger::before,
-.site-header .hamburger::after,
-.site-header .hamburger{ 
-  content: ""; display:block; background: var(--ink);
-  height: 2px; border-radius: 3px; 
-}
-.site-header .hamburger::before{ position:absolute; top:0; left:0; right:0 }
-.site-header .hamburger::after{ position:absolute; bottom:0; left:0; right:0 }
-
-/* Painel */
-.site-header .nav-panel{
-  position: absolute; inset: calc(100% + 8px) 12px auto 12px;
-  display: grid; gap: 8px; padding: 10px; border-radius: 14px;
-  background: var(--surface);
-  border: 1px solid var(--ring);
-  box-shadow: 0 18px 40px rgba(13,18,33,.18), 0 4px 12px rgba(13,18,33,.10);
-}
-.site-header .nav-panel a{
-  padding: .8rem .8rem; border-radius: 10px; font-weight: 600; color: var(--ink-2);
-  text-decoration: none; display: block;
-}
-.site-header .nav-panel a:hover{ background: rgba(0,0,0,.04); color: var(--ink) }
-.site-header .btn-cta.mobile{ display: grid; }
-
-/* Breakpoints */
-@media (min-width: 860px){
-  .site-header .nav-mobile{ display: none; }
-  .site-header .nav-desktop{ display: inline-flex; }
-  .site-header .btn-cta{ display: inline-flex; }
-  .site-header .header-bar{
-    grid-template-columns: auto 1fr auto; /* logo | nav | cta */
-  }
-}
-
-/* ===== BLOCO 1 — HOME (escopo local) ===== */
-.home-hero{
-  --brand-1:#5CC8CB; /* ciano */
-  --brand-2:#CA73B0; /* roxo */
-  --brand-3:#FEAFC2; /* rosa */
-  --ink:#121212;
-  --muted:#5a5a6a;
-  --ring:rgba(0,0,0,.08);
-
-  position: relative;
-  isolation: isolate;
-  color: var(--ink);
-  min-height: 80vh;
-  padding: clamp(40px,8vw,80px) 20px clamp(60px,10vw,120px);
-  background:
-    radial-gradient(1200px 700px at 100% -20%, rgba(202,115,176,.18), transparent 60%),
-    radial-gradient(1000px 650px at 0% 0%, rgba(92,200,203,.18), transparent 60%),
-    #ffffff;
-}
-
-.home-hero__wrap{
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1fr;
-  align-items: center;
-  min-height: calc(100vh - clamp(120px,20vw,240px));
-}
-
-@media (min-width: 960px){
-  .home-hero__wrap{
-    grid-template-columns: 1.08fr .92fr; /* texto | foto */
-  }
-}
-
-/* Marca */
-.home-hero__brand{display:inline-flex;align-items:center;gap:.58rem;text-decoration:none;margin-bottom:.2rem}
-.home-hero__mark{width:34px;height:34px;border-radius:10px;display:block}
-.home-hero__brandtype{font-weight:800;letter-spacing:.2px;background:linear-gradient(90deg,var(--brand-2),var(--brand-1));-webkit-background-clip:text;background-clip:text;color:transparent}
-
-/* Eyebrow, títulos */
-.home-hero__eyebrow{margin:.25rem 0;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-size:.85rem}
-.home-hero__title{
-  margin:.2rem 0 .4rem;
-  font-size: clamp(1.9rem, 4.2vw, 3rem);
-  line-height:1.12; font-weight:900;
-  background: linear-gradient(90deg, var(--brand-2) 0%, var(--brand-1) 100%);
-  -webkit-background-clip:text; background-clip:text; color: transparent;
-}
-.home-hero__subtitle{margin:0 0 .8rem;max-width:60ch;color:#3a3a42;font-size:1.05rem;line-height:1.6}
-
-/* Chips */
-.home-hero__chips{margin:10px 0 14px}
-.home-hero__chipslabel{display:inline-block;margin:0 0 8px;color:var(--muted);font-size:.9rem}
-.home-hero__chiplist{display:flex;flex-wrap:wrap;gap:8px}
-.chip{
-  display:inline-flex;align-items:center;gap:.4rem;padding:.56rem .8rem;border-radius:999px;
-  border:1px solid var(--ring);background:#fff;text-decoration:none;font-weight:600;color:#222;
-  box-shadow:0 10px 22px rgba(13,18,33,.06);
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-.chip:hover{transform:translateY(-1px);box-shadow:0 16px 30px rgba(13,18,33,.12);border-color:rgba(0,0,0,.12)}
-html{scroll-behavior:smooth}
-
-/* CTAs */
-.home-hero__ctas{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:.8rem 1.1rem;border-radius:12px;font-weight:800;text-decoration:none;border:1px solid transparent;
-  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
-}
-.btn--primary{
-  color:#fff;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));
-  box-shadow:0 16px 36px rgba(13,18,33,.16);
-}
-.btn--primary:hover{transform:translateY(-1px);filter:saturate(1.06) brightness(1.03)}
-.btn--ghost{
-  background:#fff;color:#222;border-color:var(--ring);
-  box-shadow:0 10px 22px rgba(13,18,33,.06);
-}
-.btn--ghost:hover{transform:translateY(-1px);box-shadow:0 16px 30px rgba(13,18,33,.12);border-color:rgba(0,0,0,.12)}
-
-/* Redes */
-.home-hero__socials{display:flex;gap:10px}
-.social{
-  width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
-  background:linear-gradient(180deg,#ffffff,rgba(255,255,255,.92));border:1px solid var(--ring);
-  box-shadow:0 10px 22px rgba(13,18,33,.06);transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease
-}
-.social:hover{transform:translateY(-1px);box-shadow:0 16px 30px rgba(13,18,33,.12);border-color:rgba(0,0,0,.12)}
-.social svg{color:#222}
-
-/* Foto + degradê */
-.home-hero__photo{
-  position: relative;
-  min-height: 320px;
-  border-radius: 22px;
-  overflow: hidden;
-  background:
-    radial-gradient(120% 80% at 70% 0%, rgba(202,115,176,.22), transparent 60%),
-    radial-gradient(120% 80% at 30% 100%, rgba(92,200,203,.22), transparent 60%),
-    #f6f7fb;
-  border:1px solid var(--ring);
-  box-shadow:0 26px 56px rgba(13,18,33,.16),0 8px 16px rgba(13,18,33,.10);
-}
-.home-hero__photo img{
-  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  mix-blend-mode:multiply; /* cria efeito de degradê sobre a foto */
-  filter:saturate(1.02) contrast(1.02);
-}
-
-/* Layout responsivo */
-.home-hero__copy{max-width:680px}
-@media (max-width: 959px){
-  .home-hero__photo{order:-1;height:52vw;min-height:280px}
-}
-
-
-/* ===== BLOCO 2 — TE AJUDO COM (escopo local) ===== */
-.help2-section{
-  padding: clamp(40px,6vw,80px) 20px;
-  background:
-    radial-gradient(900px 480px at 10% 0%, rgba(92,200,203,.12), transparent 60%),
-    radial-gradient(900px 520px at 100% 0%, rgba(202,115,176,.12), transparent 60%),
-    #ffffff;
-  color:#121212;
-}
-.help2-inner{max-width:1100px;margin:0 auto}
-
-.help2-header{
-  text-align:center;
-  margin-bottom:clamp(20px,4vw,36px);
-  opacity: 0;
-  transform: translateY(20px);
-  animation-fill-mode: forwards;
-}
-
-.help2-header.animate-in {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.help2-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#7a7a8a}
-.help2-title{
-  margin:.2rem 0;
-  font-size:clamp(1.6rem,3.2vw,2.3rem);font-weight:700;line-height:1.15;
-  background:linear-gradient(90deg,#CA73B0,#5CC8CB);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.help2-sub{max-width:58ch;margin:0 auto;color:#53535a}
-
-.help2-grid{
-  display:grid;gap:14px;margin-top:clamp(16px,3vw,24px);
-  grid-template-columns:1fr;
-}
-@media (min-width:760px){.help2-grid{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1040px){.help2-grid{grid-template-columns:repeat(3,1fr)}}
-
-.help2-card{
-  display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start;
-  padding:16px 18px;border-radius:16px;background:linear-gradient(180deg,#fff,rgba(255,255,255,.95));
-  border:1px solid rgba(0,0,0,.08);
-  box-shadow:0 16px 36px rgba(13,18,33,.10),0 4px 10px rgba(13,18,33,.06);
-  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  opacity: 0;
-  transform: translateY(30px);
-  animation-fill-mode: forwards;
-}
-
-.help2-card.animate-in {
-  animation: slideInUp 0.6s ease-out forwards;
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.help2-card:hover{transform:translateY(-2px);box-shadow:0 22px 48px rgba(13,18,33,.16),0 10px 16px rgba(13,18,33,.10);border-color:rgba(13,18,33,.16)}
-
-.help2-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;color:#fff;background:conic-gradient(from 180deg at 50% 50%,#CA73B0,#5CC8CB,#FEAFC2,#CA73B0)}
-.help2-item-title{margin:2px 0 4px;font-weight:700;color:#1d1d21;font-size:1.02rem}
-.help2-item-text{margin:0;color:#4a4a52;font-size:.95rem;line-height:1.55}
-
-
-
-
-/* ===== BLOCO 3 — QUEM É ANA BORGES? (escopo local) ===== */
-.about-section{
-  padding: clamp(44px,6vw,90px) 20px;
-  background:
-    linear-gradient(135deg, rgba(254,175,194,.06) 0%, rgba(202,115,176,.08) 50%, rgba(92,200,203,.06) 100%),
-    #fafafa;
-  color:#121212;
-}
-.about-inner{max-width:1100px;margin:0 auto}
-.about-grid{display:grid;gap:22px;grid-template-columns:1fr}
-@media (min-width:900px){.about-grid{grid-template-columns:1.1fr .9fr;align-items:center}}
-
-.about-header{margin-bottom:14px}
-.about-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#7a7a8a}
-.about-title{
-  margin:.25rem 0 .35rem;font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:800;line-height:1.15;
-  background:linear-gradient(90deg,#CA73B0,#5CC8CB);-webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.about-kicker{margin:.2rem 0 .4rem;color:#2b2b32;font-weight:700}
-.about-lead{margin:0 0 .6rem;max-width:60ch;color:#4b4b55;font-size:1.02rem;line-height:1.6}
-
-/* Balões */
-.bubble-list{display:grid;gap:10px;margin-top:8px}
-.bubble{
-  position:relative; display:grid; gap:2px;
-  background:linear-gradient(180deg,#fff,rgba(255,255,255,.96));
-  border:1px solid rgba(0,0,0,.08);
-  box-shadow:0 14px 30px rgba(13,18,33,.10),0 4px 10px rgba(13,18,33,.06);
-  border-radius:14px; padding:12px 14px;
-}
-.bubble::after{
-  content:""; position:absolute; left:14px; bottom:-8px;
-  width:14px; height:14px; transform:rotate(45deg);
-  background:#fff; border-left:1px solid rgba(0,0,0,.08); border-bottom:1px solid rgba(0,0,0,.08);
-  box-shadow:2px 2px 6px rgba(13,18,33,.06);
-}
-.bubble strong{color:#1e1e22}
-.bubble span{color:#4a4a52}
-
-/* Foto */
-.about-photo{justify-self:center}
-.about-photo img{
-  width:min(420px,88vw); height:auto; display:block;
-  border-radius:20px; object-fit:cover;
-  border:1px solid rgba(0,0,0,.08);
-  box-shadow:0 22px 48px rgba(13,18,33,.16),0 10px 16px rgba(13,18,33,.10);
-}
-
-/* Acessibilidade utilitária */
-.visually-hidden{
-  position:absolute!important; height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px;
-}
-
-
-
-/* ===== BLOCO 4 — ATUAÇÃO EM ===== */
-.atuacao-section {
-  padding: clamp(40px,6vw,70px) 20px;
-  background: #f8f9fb;
-  color: #111;
-}
-
-.atuacao-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.atuacao-header {
-  text-align: center;
-  margin-bottom: clamp(20px,4vw,36px);
-}
-
-.atuacao-eyebrow {
-  font-size: .85rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #777;
-}
-
-.atuacao-title {
-  font-size: clamp(1.6rem,3.2vw,2.2rem);
-  font-weight: 700;
-  margin: 6px 0;
-  background: linear-gradient(90deg, #CA73B0, #5CC8CB);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.atuacao-sub {
-  max-width: 50ch;
-  margin: 0 auto;
-  font-size: 1rem;
-  color: #555;
-}
-
-/* lista */
-.atuacao-list {
-  display: grid;
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.atuacao-item {
-  display: grid;
-  gap: 6px;
-  padding: 18px 20px;
-  border-radius: 14px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 10px 24px rgba(0,0,0,.06);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-
-.atuacao-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(0,0,0,.1);
-  border-color: rgba(0,0,0,.12);
-}
-
-.atuacao-item-title {
-  margin: 0;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #222;
-}
-
-.atuacao-item-text {
-  margin: 0;
-  font-size: .96rem;
-  line-height: 1.55;
-  color: #444;
-}
-
-/* responsivo */
-@media (min-width: 720px) {
-  .atuacao-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (min-width: 1040px) {
-  .atuacao-list {
-    grid-template-columns: 1fr;
-  }
-  .atuacao-item {
-    grid-template-columns: 200px 1fr;
-    align-items: start;
-  }
-  .atuacao-item-title {
-    font-size: 1.15rem;
-  }
-}
-
-
-
-/* ===== BLOCO 5 — VALORES (escopo local) ===== */
-.values-section{
-  padding: clamp(40px,6vw,80px) 20px;
-  background:
-    radial-gradient(1000px 480px at 10% 0%, rgba(92,200,203,.16), transparent 60%),
-    radial-gradient(1000px 520px at 100% 0%, rgba(202,115,176,.16), transparent 60%),
-    #0f1220; /* base escura sutil para contraste elegante */
-  color:#0f0f0f;
-}
-.values-inner{max-width:1100px;margin:0 auto}
-
-.values-header{
-  text-align:center;
-  margin-bottom: clamp(20px,4vw,36px);
-}
-.values-eyebrow{
-  font-size:.85rem; letter-spacing:.12em; text-transform:uppercase;
-  color:#7a7a8a;
-}
-.values-title{
-  margin:.25rem 0;
-  font-size: clamp(1.6rem,3.2vw,2.3rem);
-  line-height:1.15;
-  font-weight:700;
-  background: linear-gradient(90deg,#CA73B0,#5CC8CB);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-}
-.values-sub{
-  max-width:58ch; margin:0 auto; color:#d9d9df; font-size:1rem;
-}
-
-/* Grid de cards */
-.values-grid{
-  margin-top: clamp(18px,3vw,28px);
-  display:grid; gap:14px;
-  grid-template-columns:1fr;
-}
-@media (min-width:720px){
-  .values-grid{grid-template-columns:repeat(3,1fr)}
-}
-
-/* Card */
-.value-card{
-  position:relative;
-  border-radius:18px;
-  padding:18px 18px 20px;
-  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.98));
-  border:1px solid rgba(15,15,15,.08);
-  box-shadow: 0 18px 40px rgba(13,18,33,.18), 0 4px 12px rgba(13,18,33,.10);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.value-card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 22px 48px rgba(13,18,33,.22), 0 8px 16px rgba(13,18,33,.12);
-  border-color: rgba(13,18,33,.16);
-}
-
-/* Ícone do card */
-.value-icon{
-  width:48px; height:48px; border-radius:12px;
-  display:grid; place-items:center; color:#fff; margin:0 auto 12px;
-  background: #4A9B9E;
-}
-
-/* Título e texto do card */
-.value-title{
-  margin:4px 0 8px;
-  font-size:1.05rem; font-weight:700; color:#1c1c1f; text-align:center;
-}
-.value-text{
-  margin:0; color:#444; font-size:.96rem; line-height:1.6; text-align:center;
-}
-
-
-
-    
-/* ===== BLOCO 6 — TALVEZ VOCÊ TENHA DÚVIDAS ===== */
-.faq-section {
-  padding: clamp(48px, 6vw, 80px) 20px;
-  background: 
-    radial-gradient(900px 480px at 10% 0%, rgba(92,200,203,.12), transparent 60%),
-    radial-gradient(900px 520px at 100% 0%, rgba(202,115,176,.12), transparent 60%),
-    #ffffff;
-  border-top: 1px solid rgba(92,200,203,.15);
-  border-bottom: 1px solid rgba(92,200,203,.15);
-  min-height: 100%;
-  position: relative;
-}
-
-.faq-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.faq-header {
-  text-align: center;
-  margin-bottom: clamp(28px, 5vw, 45px);
-}
-
-.faq-eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 8px;
-  display: block;
-}
-
-.faq-title {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin: 0 0 12px;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.15;
-}
-
-.faq-sub {
-  max-width: 60ch;
-  margin: 0 auto;
-  font-size: clamp(.95rem, 2.2vw, 1.05rem);
-  color: #444;
-  line-height: 1.6;
-}
-
-/* Lista FAQ em Grid */
-.faq-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-@media (min-width: 768px) {
-  .faq-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-}
-
-/* Items FAQ */
-.faq-item {
-  background: #fff;
-  border: 1px solid var(--ring);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: all .2s ease;
-  box-shadow: 0 2px 8px rgba(13,18,33,.04);
-}
-
-.faq-item:hover {
-  box-shadow: 0 4px 20px rgba(13,18,33,.1);
-  border-color: rgba(92,200,203,.25);
-}
-
-.faq-item summary {
-  padding: 16px 18px;
-  font-weight: 600;
-  color: var(--ink);
-  cursor: pointer;
-  font-size: .98rem;
-  line-height: 1.4;
-  border-bottom: 1px solid transparent;
-  transition: all .2s ease;
-  list-style: none;
-  position: relative;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item summary::after {
-  content: '+';
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2em;
-  font-weight: 300;
-  color: var(--brand-1);
-  transition: transform .2s ease;
-}
-
-.faq-item[open] summary::after {
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.faq-item summary:hover {
-  background: rgba(92,200,203,.04);
-}
-
-.faq-item[open] summary {
-  border-bottom-color: var(--ring);
-  background: rgba(92,200,203,.06);
-}
-
-.faq-item p {
-  padding: 0 18px 18px;
-  margin: 0;
-  color: #555;
-  line-height: 1.6;
-  font-size: .95rem;
-}
-
-
-.faq-item {
-  background: rgba(255, 255, 255, 0.95);
-  color: #222;
-  border-radius: 14px;
-  padding: 16px 18px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.faq-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
-}
-
-.faq-item summary {
-  font-weight: 600;
-  font-size: 1.05rem;
-  cursor: pointer;
-  list-style: none;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item p {
-  margin: 12px 0 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* Ícone + / - no summary */
-.faq-item summary::after {
-  content: "+";
-  float: right;
-  font-weight: 700;
-  transition: transform 0.2s ease;
-}
-
-.faq-item[open] summary::after {
-  content: "–";
-  transform: rotate(90deg);
-}
-
-  </style>
 
 </head>
 <body>
@@ -977,7 +26,7 @@ html{scroll-behavior:smooth}
     <nav class="nav-desktop" aria-label="Navegação principal">
       <a href="#home">Início</a>
       <a href="#quem-e-ana">Sobre</a>
-      <a href="#atuacao">Serviços</a>
+      <a href="#atuacao">Demandas</a>
       <a href="#faq">FAQ</a>
       <a href="#contatos">Contatos</a>
     </nav>
@@ -993,6 +42,12 @@ html{scroll-behavior:smooth}
       <a class="social-link" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="TikTok">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
       </a>
+
+      <a class="social-link" href="https://www.instagram.com/SEU-USUARIO" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13-.38a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0z"/>
+        </svg>
+      </a>
     </div>
 
     <!-- NAV MOBILE (details/summary) -->
@@ -1003,7 +58,7 @@ html{scroll-behavior:smooth}
       <nav class="nav-panel" aria-label="Menu móvel">
         <a href="#home">Início</a>
         <a href="#quem-e-ana">Sobre</a>
-        <a href="#atuacao">Serviços</a>
+        <a href="#atuacao">Demandas</a>
         <a href="#faq">FAQ</a>
         <a href="#contatos">Contatos</a>
         <div class="mobile-socials">
@@ -1015,6 +70,10 @@ html{scroll-behavior:smooth}
           <a class="social-link mobile" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="TikTok">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
             TikTok
+          </a>
+          <a class="social-link" href="https://www.instagram.com/SEU-USUARIO" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13-.38a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0z"/>
+            </svg>
           </a>
         </div>
       </nav>
@@ -1037,19 +96,17 @@ html{scroll-behavior:smooth}
 
       <!-- Título / slogan (use um dos textos oficiais) -->
       <h1 id="home-title" class="home-hero__title">
-        Mais consciência, autonomia e autenticidade
+       Viva com mais consciência, autonomia e autenticidade!
       </h1>
-      <p class="home-hero__subtitle">
-        Te ajudo a ter uma vida mais consciente, autônoma e autêntica.
-      </p>
+     
 
       <!-- Chips de seleção — rolam para seções abaixo -->
       <div class="home-hero__chips" aria-label="Estou buscando">
         <span class="home-hero__chipslabel">Estou buscando</span>
         <nav class="home-hero__chiplist" aria-label="Serviços">
-          <a class="chip" href="#servicos-terapia">Terapia</a>
+          <a class="chip" href="#servicos-terapia">Terapia Individual</a>
           <a class="chip" href="#servicos-avaliacao">Avaliação Psicológica</a>
-          <a class="chip" href="#servicos-ingles">Aulas de Inglês</a>
+          <a class="chip" href="#servicos-emgrupo">Terapia em Grupo</a>
           <a class="chip" href="#servicos-palestras">Palestras</a>
         </nav>
       </div>
@@ -1066,15 +123,7 @@ html{scroll-behavior:smooth}
         <a class="btn btn--ghost" href="/blog" style="background: #CA73B0; color: #fff;">Ir para o Blog</a>
       </div>
 
-      <!-- Redes: LinkedIn + TikTok -->
-      <div class="home-hero__socials" aria-label="Redes">
-        <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn" class="social">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="TikTok" class="social">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
-        </a>
-      </div>
+
     </div>
 
     <!-- Coluna imagem (degradê + foto imponente) -->
@@ -1089,11 +138,7 @@ html{scroll-behavior:smooth}
 <section id="te-ajudo-com" class="help2-section" aria-labelledby="help2-title">
   <div class="help2-inner">
     <header class="help2-header">
-      <span class="help2-eyebrow">Serviços & Demandas</span>
       <h2 id="help2-title" class="help2-title">Te ajudo com</h2>
-      <p class="help2-sub">
-        Acolhimento técnico e humano, com plano de cuidado prático e baseado em evidências.
-      </p>
     </header>
 
     <div class="help2-grid">
@@ -1180,10 +225,8 @@ html{scroll-behavior:smooth}
       <!-- Texto -->
       <div class="about-copy">
         <header class="about-header">
-          <span class="about-eyebrow">Apresentação</span>
           <h2 id="about-title" class="about-title">Quem é Ana Borges?</h2>
-          <p class="about-kicker">“Quem sou eu?”</p>
-        
+      
         </header>
 
         <!-- Balões com descrição profissional -->
@@ -1226,11 +269,9 @@ html{scroll-behavior:smooth}
 <section id="atuacao" class="atuacao-section" aria-labelledby="atuacao-title">
   <div class="atuacao-inner">
     <header class="atuacao-header">
-      <span class="atuacao-eyebrow">Serviços</span>
+
       <h2 id="atuacao-title" class="atuacao-title">Atuação em</h2>
-      <p class="atuacao-sub">
-        Conheça as principais frentes de atendimento e atividades desenvolvidas na clínica.
-      </p>
+ 
     </header>
 
     <div class="atuacao-list">
@@ -1285,9 +326,6 @@ html{scroll-behavior:smooth}
     <header class="values-header">
       <span class="values-eyebrow">Valores</span>
       <h2 id="values-title" class="values-title">O que guia nosso cuidado</h2>
-      <p class="values-sub">
-        Princípios que orientam cada atendimento e toda a experiência na clínica.
-      </p>
     </header>
 
     <div class="values-grid">
@@ -1336,9 +374,7 @@ html{scroll-behavior:smooth}
     <header class="faq-header">
       <span class="faq-eyebrow">FAQ</span>
       <h2 id="faq-title" class="faq-title">Talvez você tenha dúvidas</h2>
-      <p class="faq-sub">
-        Separei respostas para as perguntas mais comuns. Assim você pode se sentir mais seguro antes de agendar.
-      </p>
+      
     </header>
 
     <div class="faq-list">
@@ -1497,55 +533,45 @@ html{scroll-behavior:smooth}
       </div>
     </div>
 
-    <!-- Redes Sociais (fora do box) -->
+    <!-- Redes Sociais (fora do box)
     <section class="socials socials-outside" aria-label="Redes sociais">
       <h3 class="socials-title">Me encontre nas redes sociais</h3>
       <nav class="social-grid">
-        <!-- Instagram -->
+         Instagram 
         <a class="social-card" href="https://www.instagram.com/SEU-USUARIO" target="_blank" rel="noopener" aria-label="Abrir Instagram">
           <div class="icon icon-instagram" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.59.96 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.96-.5 2.66a5.36 5.36 0 0 1-1.24 1.92 5.36 5.36 0 0 1-1.92 1.24c-.7.26-1.49.45-2.66.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.96-.24-2.66-.5a5.36 5.36 0 0 1-1.92-1.24A5.36 5.36 0 0 1 .5 19.2c-.26-.7-.45-1.49-.5-2.66C-.06 15.27-.07 14.9-.07 11.7s.01-3.58.07-4.85c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.59-.6 1.2-.96 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.42 2.21 8.8 2.2 12 2.2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
           </div>
           <div>
             <p class="social-title">Instagram</p>
-            <p class="social-desc">Bastidores, rotina e conteúdos práticos</p>
+            
           </div>
         </a>
 
-        <!-- TikTok -->
+         TikTok 
         <a class="social-card" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="Abrir TikTok">
           <div class="icon icon-tiktok" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
           </div>
           <div>
             <p class="social-title">TikTok</p>
-            <p class="social-desc">Vídeos rápidos e dicas</p>
+            
           </div>
         </a>
 
-        <!-- LinkedIn -->
+        LinkedIn 
         <a class="social-card" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener" aria-label="Abrir LinkedIn">
           <div class="icon icon-linkedin" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
           </div>
           <div>
             <p class="social-title">LinkedIn</p>
-            <p class="social-desc">Artigos, agenda e bastidores profissionais</p>
+            
           </div>
         </a>
 
-        <!-- YouTube -->
-        <a class="social-card" href="https://www.youtube.com/@SEU-CANAL" target="_blank" rel="noopener" aria-label="Abrir YouTube">
-          <div class="icon icon-youtube" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32 32 0 0 0 0 12a32 32 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.8.5 9.3.5 9.3.5s7.5 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32 32 0 0 0 24 12a32 32 0 0 0-.5-5.8ZM9.8 15.5v-7l6.2 3.5-6.2 3.5Z"/></svg>
-          </div>
-          <div>
-            <p class="social-title">YouTube</p>
-            <p class="social-desc">Aulas, lives e conteúdo aprofundado</p>
-          </div>
-        </a>
       </nav>
-    </section>
+    </section> -->
   </section>
 
   <!-- Rodapé -->
@@ -1578,7 +604,7 @@ html{scroll-behavior:smooth}
         <div class="footer-col">
           <h4>Contato</h4>
           <ul>
-            <li><a href="mailto:contato@anaborgespsico.com">contato@anaborgespsico.com</a></li>
+            <li><a href="mailto:contato@anaborgespsico.com">contato@anaborges.psic.com</a></li>
             <li><a href="https://wa.me/5599999999999" target="_blank" rel="noopener">WhatsApp</a></li>
           </ul>
           <div class="footer-socials">
