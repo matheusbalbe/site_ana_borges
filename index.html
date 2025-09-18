@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,446 +14,502 @@
 
 
 </head>
+
 <body>
   <!-- CABEÇALHO -->
-<header class="site-header" aria-label="Cabeçalho principal">
-  <div class="header-bar">
-    <!-- LOGO -->
-    <a href="#inicio" class="brand" aria-label="Voltar ao início">
-      <img class="brand-mark" src="Logo_ana_roxa.svg" alt="Ana Borges" style="width: 140px; height: 60px;" />
-    </a>
-
-    <!-- NAV DESKTOP -->
-    <nav class="nav-desktop" aria-label="Navegação principal">
-      <a href="#home">Início</a>
-      <a href="#quem-e-ana">Sobre</a>
-      <a href="#atuacao">Demandas</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contatos">Contatos</a>
-    </nav>
-
-    <!-- SOCIAL LINKS -->
-    <div class="header-socials">
-      <a class="btn-blog" href="/blog" target="_blank" rel="noopener" aria-label="Acessar blog">
-        Blog
-      </a>
-      <a class="social-link" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
-      </a>
-      <a class="social-link" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
+  <header class="site-header" aria-label="Cabeçalho principal">
+    <div class="header-bar">
+      <!-- LOGO -->
+      <a href="#inicio" class="brand" aria-label="Voltar ao início">
+        <img class="brand-mark" src="Logo_ana_roxa.svg" alt="Ana Borges" style="width: 140px; height: 60px;" />
       </a>
 
-      <a class="social-link" href="https://www.instagram.com/SEU-USUARIO" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13-.38a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0z"/>
-        </svg>
-      </a>
-    </div>
-
-    <!-- NAV MOBILE (details/summary) -->
-    <details class="nav-mobile">
-      <summary aria-label="Abrir menu">
-        <span class="hamburger" aria-hidden="true"></span>
-      </summary>
-      <nav class="nav-panel" aria-label="Menu móvel">
+      <!-- NAV DESKTOP -->
+      <nav class="nav-desktop" aria-label="Navegação principal">
         <a href="#home">Início</a>
         <a href="#quem-e-ana">Sobre</a>
         <a href="#atuacao">Demandas</a>
         <a href="#faq">FAQ</a>
         <a href="#contatos">Contatos</a>
-        <div class="mobile-socials">
-          <a class="btn-blog mobile" href="/blog" target="_blank" rel="noopener">Blog</a>
-          <a class="social-link mobile" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
-            LinkedIn
-          </a>
-          <a class="social-link mobile" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener" aria-label="TikTok">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
-            TikTok
-          </a>
-          <a class="social-link" href="https://www.instagram.com/SEU-USUARIO" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13-.38a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0z"/>
-            </svg>
-          </a>
-        </div>
       </nav>
-    </details>
-  </div>
-</header>
 
-
-<!-- BLOCO 1 — HOME -->
-<section id="home" class="home-hero" aria-labelledby="home-title">
-  <div class="home-hero__wrap">
-    <!-- Coluna texto -->
-    <div class="home-hero__copy">
-      <!-- Logo + marca (logo oficial) -->
-      <a href="#home" class="home-hero__brand" aria-label="Ana Borges — Início">
-      </a>
-
-
-      <p class="home-hero__eyebrow">Bem-vindo(a)!</p>
-
-      <!-- Título / slogan (use um dos textos oficiais) -->
-      <h1 id="home-title" class="home-hero__title">
-       Viva com mais consciência, autonomia e autenticidade!
-      </h1>
-     
-
-      <!-- Chips de seleção — rolam para seções abaixo -->
-      <div class="home-hero__chips" aria-label="Estou buscando">
-        <span class="home-hero__chipslabel">Estou buscando</span>
-        <nav class="home-hero__chiplist" aria-label="Serviços">
-          <a class="chip" href="#servicos-terapia">Terapia Individual</a>
-          <a class="chip" href="#servicos-avaliacao">Avaliação Psicológica</a>
-          <a class="chip" href="#servicos-emgrupo">Terapia em Grupo</a>
-          <a class="chip" href="#servicos-palestras">Palestras</a>
-        </nav>
-      </div>
-
-      <!-- CTAs: WhatsApp (substitui "não sabe…") + Blog (único botão para conteúdo) -->
-      <div class="home-hero__ctas">
-        <a class="btn btn--primary" 
-           href="https://wa.me/5599999999999?text=Olá%20Ana!%20Estou%20buscando%20(atendimento%20de%20Terapia%20|%20Avaliação%20Psicológica%20|%20Aulas%20de%20Inglês%20|%20Palestras)%20e%20gostaria%20de%20orientações."
-           target="_blank" rel="noopener"
-           style="background: #4A9B9E; color: #fff;">
-      
-          Falar no WhatsApp
+      <!-- SOCIAL LINKS -->
+      <div class="header-socials">
+        <a class="btn-blog" href="/blog" target="_blank" rel="noopener" aria-label="Acessar blog">
+          Blog
         </a>
-        <a class="btn btn--ghost" href="/blog" style="background: #CA73B0; color: #fff;">Ir para o Blog</a>
+        <a class="social-link" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener"
+          aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z" />
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener"
+          aria-label="TikTok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z" />
+          </svg>
+        </a>
+
+        <a class="social-link" href="https://www.instagram.com/SEU-USUARIO" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13-.38a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0z" />
+          </svg>
+        </a>
       </div>
 
-
+      <!-- NAV MOBILE (details/summary) -->
+      <details class="nav-mobile">
+        <summary aria-label="Abrir menu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </summary>
+        <nav class="nav-panel" aria-label="Menu móvel">
+          <a href="#home">Início</a>
+          <a href="#quem-e-ana">Sobre</a>
+          <a href="#atuacao">Demandas</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contatos">Contatos</a>
+          <div class="mobile-socials">
+            <a class="btn-blog mobile" href="/blog" target="_blank" rel="noopener">Blog</a>
+            <a class="social-link mobile" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener"
+              aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a class="social-link mobile" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener"
+              aria-label="TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z" />
+              </svg>
+              TikTok
+            </a>
+            <a class="social-link" href="https://www.instagram.com/SEU-USUARIO" target="_blank" rel="noopener"
+              aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13-.38a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0z" />
+              </svg>
+            </a>
+          </div>
+        </nav>
+      </details>
     </div>
-
-    <!-- Coluna imagem (degradê + foto imponente) -->
-    <figure class="home-hero__photo">
-      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Ana Borges — Psicóloga e Neuropsicóloga" loading="eager" />
-    </figure>
-  </div>
-</section>
+  </header>
 
 
-<!-- BLOCO 2 — TE AJUDO COM -->
-<section id="te-ajudo-com" class="help2-section" aria-labelledby="help2-title">
-  <div class="help2-inner">
-    <header class="help2-header">
-      <h2 id="help2-title" class="help2-title">Te ajudo com</h2>
-    </header>
+  <!-- BLOCO 1 — HOME -->
+  <section id="home" class="home-hero" aria-labelledby="home-title">
+    <div class="home-hero__wrap">
+      <!-- Coluna texto -->
+      <div class="home-hero__copy">
+        <!-- Logo + marca (logo oficial) -->
+        <a href="#home" class="home-hero__brand" aria-label="Ana Borges — Início">
+        </a>
 
-    <div class="help2-grid">
-      <!-- Neurodiversidade e Altas Habilidades -->
-      <article class="help2-card">
-        <div class="help2-icon" aria-hidden="true">
-          <!-- ícone: cérebro/neuro -->
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 3a3 3 0 0 0-3 3v.5A3 3 0 0 0 3 9v3a3 3 0 0 0 2 2.83V16a3 3 0 0 0 3 3h1v-7H8a2 2 0 1 1 0-4h1V3H8Zm8 0h-1v4h1a2 2 0 1 1 0 4h-1v7h1a3 3 0 0 0 3-3v-1.17A3 3 0 0 0 21 12V9a3 3 0 0 0-2-2.5V6a3 3 0 0 0-3-3Z"/></svg>
+
+        <p class="home-hero__eyebrow">Bem-vindo(a)!</p>
+
+        <!-- Título / slogan (use um dos textos oficiais) -->
+        <h1 id="home-title" class="home-hero__title">
+          Viva com mais consciência, autonomia e autenticidade!
+        </h1>
+
+
+        <!-- Chips de seleção — rolam para seções abaixo -->
+        <div class="home-hero__chips" aria-label="Estou buscando">
+          <span class="home-hero__chipslabel">Estou buscando</span>
+          <nav class="home-hero__chiplist" aria-label="Serviços">
+            <a class="chip" href="#servicos-terapia">Terapia Individual</a>
+            <a class="chip" href="#servicos-avaliacao">Avaliação Psicológica</a>
+            <a class="chip" href="#servicos-emgrupo">Terapia em Grupo</a>
+            <a class="chip" href="#servicos-palestras">Palestras</a>
+          </nav>
         </div>
-        <div class="help2-content">
-          <h3 class="help2-item-title">Neurodiversidade e Altas Habilidades</h3>
-          <p class="help2-item-text">
-            Acolhimento e estratégias para TEA, TDAH e outros transtornos do neurodesenvolvimento, altas habilidades e dupla excepcionalidade.
-          </p>
-        </div>
-      </article>
 
-      <!-- Saúde emocional -->
-      <article class="help2-card">
-        <div class="help2-icon" aria-hidden="true">
-          <!-- ícone: coração/saúde -->
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 21s-6.7-4.35-9.1-8C1.3 10.4 2.1 7.5 4.6 6a4.9 4.9 0 0 1 5.9.9l1.5 1.6 1.5-1.6a4.9 4.9 0 0 1 5.9-.9c2.5 1.5 3.3 4.4 1.7 7-2.4 3.65-9.1 8-9.1 8Z"/></svg>
-        </div>
-        <div class="help2-content">
-          <h3 class="help2-item-title">Saúde emocional</h3>
-          <p class="help2-item-text">
-            Regulação emocional e tratamento para ansiedade e depressão.
-          </p>
-        </div>
-      </article>
+        <!-- CTAs: WhatsApp (substitui "não sabe…") + Blog (único botão para conteúdo) -->
+        <div class="home-hero__ctas">
+          <a class="btn btn--primary"
+            href="https://wa.me/5599999999999?text=Olá%20Ana!%20Estou%20buscando%20(atendimento%20de%20Terapia%20|%20Avaliação%20Psicológica%20|%20Aulas%20de%20Inglês%20|%20Palestras)%20e%20gostaria%20de%20orientações."
+            target="_blank" rel="noopener" style="background: #4A9B9E; color: #fff;">
 
-      <!-- Relacionamentos e vida social -->
-      <article class="help2-card">
-        <div class="help2-icon" aria-hidden="true">
-          <!-- ícone: pessoas/relações -->
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M7 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm10 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3ZM7 13a5 5 0 0 0-5 5v1h6v-1a5 5 0 0 1 3-4.58A6.9 6.9 0 0 0 7 13Zm10 0a6.9 6.9 0 0 0-4 1.42A5 5 0 0 1 16 19v1h6v-1a5 5 0 0 0-5-5Z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="/blog" style="background: #CA73B0; color: #fff;">Ir para o Blog</a>
         </div>
-        <div class="help2-content">
-          <h3 class="help2-item-title">Relacionamentos e vida social</h3>
-          <p class="help2-item-text">
-            Treino de habilidades sociais, construção de vínculos saudáveis e equilíbrio entre vida pessoal e profissional.
-          </p>
-        </div>
-      </article>
 
-      <!-- Organização e planejamento -->
-      <article class="help2-card">
-        <div class="help2-icon" aria-hidden="true">
-          <!-- ícone: calendário/tempo -->
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v2H2V6a2 2 0 0 1 2-2h3V2Zm15 8H2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V10ZM6 14h5v5H6v-5Z"/></svg>
-        </div>
-        <div class="help2-content">
-          <h3 class="help2-item-title">Organização e planejamento</h3>
-          <p class="help2-item-text">
-            Organização de rotina, gestão de tempo, planejamento diário e treino de funções executivas.
-          </p>
-        </div>
-      </article>
-
-      <!-- Autoconhecimento e prática diária -->
-      <article class="help2-card">
-        <div class="help2-icon" aria-hidden="true">
-          <!-- ícone: bússola/propósito -->
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.5 6.5-2.16 5.06L8.3 15.5l2.16-5.06L15.5 8.5Z"/></svg>
-        </div>
-        <div class="help2-content">
-          <h3 class="help2-item-title">Autoconhecimento e prática diária</h3>
-          <p class="help2-item-text">
-            Compreensão do seu perfil cognitivo e emocional, psicoeducação e criação de uma vida valorosa.
-          </p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- BLOCO 3 — QUEM É ANA BORGES? -->
-<section id="quem-e-ana" class="about-section" aria-labelledby="about-title">
-  <div class="about-inner">
-    <div class="about-grid">
-      <!-- Texto -->
-      <div class="about-copy">
-        <header class="about-header">
-          <h2 id="about-title" class="about-title">Quem é Ana Borges?</h2>
-      
-        </header>
-
-        <!-- Balões com descrição profissional -->
-<div class="bubble-list" role="list">
-  <div class="bubble" role="listitem">
-    <strong>Formação</strong>
-    <span>Neuropsicóloga pela PUC-RS e psicóloga formada pela UFMG</span>
-  </div>
-  <div class="bubble" role="listitem">
-    <strong>Atuação</strong>
-    <span>Psicoterapia individual, avaliação psicológica, orientação familiar e grupos terapêuticos</span>
-  </div>
-  <div class="bubble" role="listitem">
-    <strong>Abordagem</strong>
-    <span>Baseada em evidências, terapias comportamentais e cognitivas, com postura diretiva e próxima</span>
-  </div>
-  <div class="bubble" role="listitem">
-    <strong>Estilo</strong>
-    <span>Converso, questiono e proponho reflexões. Quero estar junto no processo</span>
-  </div>
-  <div class="bubble" role="listitem">
-    <strong>Além do consultório</strong>
-    <span>Apaixonada por Psicologia, família, natureza, moda e design — sensível, profunda e sagaz</span>
-  </div>
-</div>
 
       </div>
 
-      <!-- Foto -->
-      <figure class="about-photo">
-        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Foto de Ana Borges" loading="lazy" />
-        <figcaption class="visually-hidden">Retrato de Ana Borges</figcaption>
+      <!-- Coluna imagem (degradê + foto imponente) -->
+      <figure class="home-hero__photo">
+        <img
+          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900&q=80"
+          alt="Ana Borges — Psicóloga e Neuropsicóloga" loading="eager" />
       </figure>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- BLOCO 4 — ATUAÇÃO EM -->
-<section id="atuacao" class="atuacao-section" aria-labelledby="atuacao-title">
-  <div class="atuacao-inner">
-    <header class="atuacao-header">
+  <!-- BLOCO 2 — TE AJUDO COM -->
+  <section id="te-ajudo-com" class="help2-section" aria-labelledby="help2-title">
+    <div class="help2-inner">
+      <header class="help2-header">
+        <h2 id="help2-title" class="help2-title">Te ajudo com</h2>
+      </header>
 
-      <h2 id="atuacao-title" class="atuacao-title">Atuação em</h2>
- 
-    </header>
+      <div class="help2-grid">
+        <!-- Neurodiversidade e Altas Habilidades -->
+        <article class="help2-card">
+          <div class="help2-icon" aria-hidden="true">
+            <!-- ícone: infinito -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path
+                d="M18.6 6.62c-1.44 0-2.8.56-3.77 1.53L12 10.66 10.48 12h.01L7.8 14.39c-.64.64-1.49.99-2.4.99-1.87 0-3.39-1.51-3.39-3.38S3.53 8.62 5.4 8.62c.91 0 1.76.35 2.44 1.03l1.13 1 1.51-1.34L9.22 8.2C8.2 7.18 6.84 6.62 5.4 6.62 2.42 6.62 0 9.04 0 12s2.42 5.38 5.4 5.38c1.44 0 2.8-.56 3.77-1.53l2.83-2.5.01.01L13.52 12h-.01l2.69-2.39c.64-.64 1.49-.99 2.4-.99 1.87 0 3.39 1.51 3.39 3.38s-1.52 3.38-3.39 3.38c-.9 0-1.76-.35-2.44-1.03l-1.14-1.01-1.51 1.34 1.27 1.12c1.02 1.01 2.37 1.57 3.82 1.57 2.98 0 5.4-2.41 5.4-5.38s-2.42-5.37-5.4-5.37z" />
+            </svg>
+          </div>
+          <div class="help2-content">
+            <h3 class="help2-item-title">Neurodiversidade e Altas Habilidades</h3>
+            <p class="help2-item-text">
+              Acolhimento e estratégias para TEA, TDAH e outros transtornos do neurodesenvolvimento, altas habilidades e
+              dupla excepcionalidade.
+            </p>
+          </div>
+        </article>
 
-    <div class="atuacao-list">
-      <!-- item 1 -->
-      <div class="atuacao-item">
-        <h3 class="atuacao-item-title">Psicoterapia individual</h3>
-        <p class="atuacao-item-text">
-          Atendimento personalizado para trabalhar questões emocionais, comportamentais e de autoconhecimento em um espaço seguro.
-        </p>
-      </div>
+        <!-- Saúde emocional -->
+        <article class="help2-card">
+          <div class="help2-icon" aria-hidden="true">
+            <!-- ícone: coração/saúde -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path
+                d="M12 21s-6.7-4.35-9.1-8C1.3 10.4 2.1 7.5 4.6 6a4.9 4.9 0 0 1 5.9.9l1.5 1.6 1.5-1.6a4.9 4.9 0 0 1 5.9-.9c2.5 1.5 3.3 4.4 1.7 7-2.4 3.65-9.1 8-9.1 8Z" />
+            </svg>
+          </div>
+          <div class="help2-content">
+            <h3 class="help2-item-title">Saúde emocional</h3>
+            <p class="help2-item-text">
+              Regulação emocional e tratamento para ansiedade e depressão.
+            </p>
+          </div>
+        </article>
 
-      <!-- item 2 -->
-      <div class="atuacao-item">
-        <h3 class="atuacao-item-title">Avaliação neuropsicológica</h3>
-        <p class="atuacao-item-text">
-          Investigação das funções cognitivas (memória, atenção, linguagem, raciocínio) para diagnóstico, orientação e intervenções adequadas.
-        </p>
-      </div>
+        <!-- Relacionamentos e vida social -->
+        <article class="help2-card">
+          <div class="help2-icon" aria-hidden="true">
+            <!-- ícone: pessoas/relações -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path
+                d="M7 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm10 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3ZM7 13a5 5 0 0 0-5 5v1h6v-1a5 5 0 0 1 3-4.58A6.9 6.9 0 0 0 7 13Zm10 0a6.9 6.9 0 0 0-4 1.42A5 5 0 0 1 16 19v1h6v-1a5 5 0 0 0-5-5Z" />
+            </svg>
+          </div>
+          <div class="help2-content">
+            <h3 class="help2-item-title">Relacionamentos e vida social</h3>
+            <p class="help2-item-text">
+              Treino de habilidades sociais, construção de vínculos saudáveis e equilíbrio entre vida pessoal e
+              profissional.
+            </p>
+          </div>
+        </article>
 
-      <!-- item 3 -->
-      <div class="atuacao-item">
-        <h3 class="atuacao-item-title">Orientação familiar</h3>
-        <p class="atuacao-item-text">
-          Apoio a famílias no manejo de desafios cotidianos, comunicação saudável e fortalecimento dos vínculos.
-        </p>
-      </div>
+        <!-- Organização e planejamento -->
+        <article class="help2-card">
+          <div class="help2-icon" aria-hidden="true">
+            <!-- ícone: relógio -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path
+                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z" />
+            </svg>
+          </div>
+          <div class="help2-content">
+            <h3 class="help2-item-title">Organização e planejamento</h3>
+            <p class="help2-item-text">
+              Organização de rotina, gestão de tempo, planejamento diário e treino de funções executivas.
+            </p>
+          </div>
+        </article>
 
-      <!-- item 4 -->
-      <div class="atuacao-item">
-        <h3 class="atuacao-item-title">Grupos terapêuticos</h3>
-        <p class="atuacao-item-text">
-          Encontros coletivos que favorecem a troca de experiências, suporte mútuo e desenvolvimento de habilidades socioemocionais.
-        </p>
-      </div>
-
-      <!-- item 5 -->
-      <div class="atuacao-item">
-        <h3 class="atuacao-item-title">Palestras e workshops</h3>
-        <p class="atuacao-item-text">
-          Ações de psicoeducação para empresas, escolas e comunidades, promovendo saúde mental e bem-estar coletivo.
-        </p>
+        <!-- Autoconhecimento e prática diária -->
+        <article class="help2-card">
+          <div class="help2-icon" aria-hidden="true">
+            <!-- ícone: lâmpada -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7zM9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z" />
+            </svg>
+          </div>
+          <div class="help2-content">
+            <h3 class="help2-item-title">Autoconhecimento e prática diária</h3>
+            <p class="help2-item-text">
+              Compreensão do seu perfil cognitivo e emocional, psicoeducação e criação de uma vida valorosa.
+            </p>
+          </div>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+
+
+
+  <!-- BLOCO 3 — QUEM É ANA BORGES? -->
+  <section id="quem-e-ana" class="about-section" aria-labelledby="about-title">
+    <div class="about-inner">
+      <div class="about-grid">
+        <!-- Texto -->
+        <div class="about-copy">
+          <header class="about-header">
+            <h2 id="about-title" class="about-title">Quem é Ana Borges?</h2>
+
+          </header>
+
+          <!-- Balões com descrição profissional -->
+          <div class="bubble-list" role="list">
+            <div class="bubble" role="listitem">
+              <strong>Formação</strong>
+              <span>Neuropsicóloga pela PUC-RS e psicóloga formada pela UFMG</span>
+            </div>
+            <div class="bubble" role="listitem">
+              <strong>Atuação</strong>
+              <span>Psicoterapia individual, avaliação psicológica, orientação familiar e grupos terapêuticos</span>
+            </div>
+            <div class="bubble" role="listitem">
+              <strong>Abordagem</strong>
+              <span>Baseada em evidências, terapias comportamentais e cognitivas, com postura diretiva e próxima</span>
+            </div>
+            <div class="bubble" role="listitem">
+              <strong>Estilo</strong>
+              <span>Converso, questiono e proponho reflexões. Quero estar junto no processo</span>
+            </div>
+            <div class="bubble" role="listitem">
+              <strong>Além do consultório</strong>
+              <span>Apaixonada por Psicologia, família, natureza, moda e design — sensível, profunda e sagaz</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Foto -->
+        <figure class="about-photo">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+            alt="Foto de Ana Borges" loading="lazy" />
+          <figcaption class="visually-hidden">Retrato de Ana Borges</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BLOCO 4 — ATUAÇÃO EM -->
+  <section id="atuacao" class="atuacao-section" aria-labelledby="atuacao-title">
+    <div class="atuacao-inner">
+      <header class="atuacao-header">
+
+        <h2 id="atuacao-title" class="atuacao-title">Atuação em</h2>
+
+      </header>
+
+      <div class="atuacao-list">
+        <!-- item 1 -->
+        <div class="atuacao-item">
+          <h3 class="atuacao-item-title">Psicoterapia individual</h3>
+          <p class="atuacao-item-text">
+            Atendimento personalizado para trabalhar questões emocionais, comportamentais e de autoconhecimento em um
+            espaço seguro.
+          </p>
+        </div>
+
+        <!-- item 2 -->
+        <div class="atuacao-item">
+          <h3 class="atuacao-item-title">Avaliação neuropsicológica</h3>
+          <p class="atuacao-item-text">
+            Investigação das funções cognitivas (memória, atenção, linguagem, raciocínio) para diagnóstico, orientação e
+            intervenções adequadas.
+          </p>
+        </div>
+
+        <!-- item 3 -->
+        <div class="atuacao-item">
+          <h3 class="atuacao-item-title">Orientação familiar</h3>
+          <p class="atuacao-item-text">
+            Apoio a famílias no manejo de desafios cotidianos, comunicação saudável e fortalecimento dos vínculos.
+          </p>
+        </div>
+
+        <!-- item 4 -->
+        <div class="atuacao-item">
+          <h3 class="atuacao-item-title">Grupos terapêuticos</h3>
+          <p class="atuacao-item-text">
+            Encontros coletivos que favorecem a troca de experiências, suporte mútuo e desenvolvimento de habilidades
+            socioemocionais.
+          </p>
+        </div>
+
+        <!-- item 5 -->
+        <div class="atuacao-item">
+          <h3 class="atuacao-item-title">Palestras e workshops</h3>
+          <p class="atuacao-item-text">
+            Ações de psicoeducação para empresas, escolas e comunidades, promovendo saúde mental e bem-estar coletivo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
   <!-- BLOCO 5 — VALORES -->
-<section id="valores" class="values-section" aria-labelledby="values-title">
-  <div class="values-inner">
-    <header class="values-header">
-      <span class="values-eyebrow">Valores</span>
-      <h2 id="values-title" class="values-title">O que guia nosso cuidado</h2>
-    </header>
+  <section id="valores" class="values-section" aria-labelledby="values-title">
+    <div class="values-inner">
+      <header class="values-header">
+        <span class="values-eyebrow">Valores</span>
+        <h2 id="values-title" class="values-title">O que guia nosso cuidado</h2>
+      </header>
 
-    <div class="values-grid">
-      <!-- Card 1 -->
-      <article class="value-card">
-        <div class="value-icon" aria-hidden="true">
-          <!-- Ícone “insight/consciência” -->
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 21h6v-2H9v2Zm3-19a8 8 0 0 0-4 15v1h8v-1a8 8 0 0 0-4-15Zm0 2a6 6 0 0 1 3 11.2V17h-6v-1.8A6 6 0 0 1 12 4Z"/></svg>
-        </div>
-        <h3 class="value-title">Consciência</h3>
-        <p class="value-text">
-          Promovemos reflexão segura para reconhecer padrões, sentimentos e necessidades reais — o primeiro passo para mudanças duradouras.
-        </p>
-      </article>
+      <div class="values-grid">
+        <!-- Card 1 -->
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <!-- Ícone “insight/consciência” -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M11,0v3h2v-3zM4.22266,2.80859l-1.41406,1.41406l2.12109,2.12109l1.41406,-1.41406zM19.77734,2.80859l-2.12109,2.12109l1.41406,1.41406l2.12109,-2.12109zM12,5c-3.85415,0 -7,3.14585 -7,7c0,3.85415 3.14585,7 7,7c3.85415,0 7,-3.14585 7,-7c0,-3.85415 -3.14585,-7 -7,-7zM12,7c2.77327,0 5,2.22673 5,5c0,2.77327 -2.22673,5 -5,5c-2.77327,0 -5,-2.22673 -5,-5c0,-2.77327 2.22673,-5 5,-5zM0,11v2h3v-2zM21,11v2h3v-2zM4.92969,17.65625l-2.12109,2.12109l1.41406,1.41406l2.12109,-2.12109zM19.07031,17.65625l-1.41406,1.41406l2.12109,2.12109l1.41406,-1.41406zM11,21v3h2v-3z"></path>
+            </svg>
+          </div>
+          <h3 class="value-title">Consciência</h3>
+          <p class="value-text">
+            Promovemos reflexão segura para reconhecer padrões, sentimentos e necessidades reais — o primeiro passo para
+            mudanças duradouras.
+          </p>
+        </article>
 
-      <!-- Card 2 -->
-      <article class="value-card">
-        <div class="value-icon" aria-hidden="true">
-          <!-- Ícone “autonomia” -->
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5v3H5l7 7 7-7h-2V7a5 5 0 0 0-5-5Zm0 2a3 3 0 0 1 3 3v3H9V7a3 3 0 0 1 3-3Zm-7 16h14v2H5v-2Z"/></svg>
-        </div>
-        <h3 class="value-title">Autonomia</h3>
-        <p class="value-text">
-          Fortalecemos decisões conscientes: você como agente do próprio processo, com ferramentas práticas para o dia a dia.
-        </p>
-      </article>
+        <!-- Card 2 -->
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <!-- Ícone “autonomia” -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M16.949 14.121L19.071 12a5 5 0 1 0-7.071-7.071l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a3 3 0 1 1 4.243 4.243l-2.122 2.121a1 1 0 1 0 1.414 1.414zM7.051 9.879L4.929 12a5 5 0 1 0 7.071 7.071l1.414-1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a3 3 0 1 1-4.243-4.243l2.122-2.121a1 1 0 1 0-1.414-1.414zm.308 4.536a1 1 0 0 1 1.414 0l4.242 4.242a1 1 0 0 1-1.414 1.414L7.359 15.83a1 1 0 0 1 0-1.414z"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Autonomia</h3>
+          <p class="value-text">
+            Fortalecemos decisões conscientes: você como agente do próprio processo, com ferramentas práticas para o dia
+            a dia.
+          </p>
+        </article>
 
-      <!-- Card 3 -->
-      <article class="value-card">
-        <div class="value-icon" aria-hidden="true">
-          <!-- Ícone “autenticidade” -->
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4l-10 5Z"/></svg>
-        </div>
-        <h3 class="value-title">Autenticidade</h3>
-        <p class="value-text">
-          Um espaço acolhedor para ser quem você é — sem rótulos — alinhando discurso, emoções e atitudes com seus valores.
-        </p>
-      </article>
+        <!-- Card 3 -->
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <!-- Ícone “autenticidade” -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+             <path
+                d="M12 21s-6.7-4.35-9.1-8C1.3 10.4 2.1 7.5 4.6 6a4.9 4.9 0 0 1 5.9.9l1.5 1.6 1.5-1.6a4.9 4.9 0 0 1 5.9-.9c2.5 1.5 3.3 4.4 1.7 7-2.4 3.65-9.1 8-9.1 8Z" />
+            </svg>
+          </div>
+          <h3 class="value-title">Autenticidade</h3>
+          <p class="value-text">
+            Um espaço acolhedor para ser quem você é — sem rótulos — alinhando discurso, emoções e atitudes com seus
+            valores.
+          </p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- BLOCO 6 — TALVEZ VOCÊ TENHA DÚVIDAS -->
-<section id="faq" class="faq-section" aria-labelledby="faq-title">
-  <div class="faq-inner">
-    <header class="faq-header">
-      <span class="faq-eyebrow">FAQ</span>
-      <h2 id="faq-title" class="faq-title">Talvez você tenha dúvidas</h2>
-      
-    </header>
+  <section id="faq" class="faq-section" aria-labelledby="faq-title">
+    <div class="faq-inner">
+      <header class="faq-header">
+        <span class="faq-eyebrow">FAQ</span>
+        <h2 id="faq-title" class="faq-title">Talvez você tenha dúvidas</h2>
 
-    <div class="faq-list">
-      <!-- Pergunta 1 -->
-      <details class="faq-item">
-        <summary>Qual o valor da sessão?</summary>
-        <p>O valor da sessão é tabelado pelo Conselho Federal de Psicologia e será informado no primeiro contato.</p>
-      </details>
+      </header>
 
-      <!-- Pergunta 2 -->
-      <details class="faq-item">
-        <summary>Aceita algum convênio?</summary>
-        <p>Não, mas emito Recibo Saúde para reembolso.</p>
-      </details>
+      <div class="faq-list">
+        <!-- Pergunta 1 -->
+        <details class="faq-item">
+          <summary>Qual o valor da sessão?</summary>
+          <p>O valor da sessão é tabelado pelo Conselho Federal de Psicologia e será informado no primeiro contato.</p>
+        </details>
 
-      <!-- Pergunta 3 -->
-      <details class="faq-item">
-        <summary>Você atende casais?</summary>
-        <p>Não.</p>
-      </details>
+        <!-- Pergunta 2 -->
+        <details class="faq-item">
+          <summary>Aceita algum convênio?</summary>
+          <p>Não, mas emito Recibo Saúde para reembolso.</p>
+        </details>
 
-      <!-- Pergunta 4 -->
-      <details class="faq-item">
-        <summary>Você atende crianças?</summary>
-        <p>Somente com Altas Habilidades e/ou Dupla Excepcionalidade.</p>
-      </details>
+        <!-- Pergunta 3 -->
+        <details class="faq-item">
+          <summary>Você atende casais?</summary>
+          <p>Não.</p>
+        </details>
 
-      <!-- Pergunta 5 -->
-      <details class="faq-item">
-        <summary>Qual a frequência e a duração das sessões?</summary>
-        <p>Elas ocorrem semanalmente e duram 50 minutos. Sessões quinzenais ou mensais podem ser discutidas a depender do caso e da fase de tratamento.</p>
-      </details>
+        <!-- Pergunta 4 -->
+        <details class="faq-item">
+          <summary>Você atende crianças?</summary>
+          <p>Somente com Altas Habilidades e/ou Dupla Excepcionalidade.</p>
+        </details>
 
-      <!-- Pergunta 6 -->
-      <details class="faq-item">
-        <summary>Terapia dura para sempre?</summary>
-        <p>Não! Trabalho com o modelo de alta, em que a pessoa é liberada dos atendimentos quando os objetivos terapêuticos são atingidos e ela se sente segura para caminhar com autonomia.</p>
-      </details>
+        <!-- Pergunta 5 -->
+        <details class="faq-item">
+          <summary>Qual a frequência e a duração das sessões?</summary>
+          <p>Elas ocorrem semanalmente e duram 50 minutos. Sessões quinzenais ou mensais podem ser discutidas a depender
+            do caso e da fase de tratamento.</p>
+        </details>
 
-      <!-- Pergunta 7 -->
-      <details class="faq-item">
-        <summary>Você atende online ou presencial?</summary>
-        <p>Os atendimentos são, em grande maioria, online. Atendimentos presenciais a combinar.</p>
-      </details>
+        <!-- Pergunta 6 -->
+        <details class="faq-item">
+          <summary>Terapia dura para sempre?</summary>
+          <p>Não! Trabalho com o modelo de alta, em que a pessoa é liberada dos atendimentos quando os objetivos
+            terapêuticos são atingidos e ela se sente segura para caminhar com autonomia.</p>
+        </details>
 
-      <!-- Pergunta 8 -->
-      <details class="faq-item">
-        <summary>Qual o valor da avaliação psicológica?</summary>
-        <p>O valor da avaliação será informado no primeiro contato.</p>
-      </details>
+        <!-- Pergunta 7 -->
+        <details class="faq-item">
+          <summary>Você atende online ou presencial?</summary>
+          <p>Os atendimentos são, em grande maioria, online. Atendimentos presenciais a combinar.</p>
+        </details>
 
-      <!-- Pergunta 9 -->
-      <details class="faq-item">
-        <summary>Quem deve fazer avaliação psicológica?</summary>
-        <p>Em breve mais informações sobre este tema.</p>
-      </details>
+        <!-- Pergunta 8 -->
+        <details class="faq-item">
+          <summary>Qual o valor da avaliação psicológica?</summary>
+          <p>O valor da avaliação será informado no primeiro contato.</p>
+        </details>
 
-      <!-- Pergunta 10 -->
-      <details class="faq-item">
-        <summary>Qual o público dos grupos terapêuticos?</summary>
-        <p>Em breve mais informações sobre este tema.</p>
-      </details>
+        <!-- Pergunta 9 -->
+        <details class="faq-item">
+          <summary>Quem deve fazer avaliação psicológica?</summary>
+          <p>Em breve mais informações sobre este tema.</p>
+        </details>
 
-      <!-- Pergunta 11 -->
-      <details class="faq-item">
-        <summary>Qual a duração da orientação familiar?</summary>
-        <p>Em breve mais informações sobre este tema.</p>
-      </details>
+        <!-- Pergunta 10 -->
+        <details class="faq-item">
+          <summary>Qual o público dos grupos terapêuticos?</summary>
+          <p>Em breve mais informações sobre este tema.</p>
+        </details>
 
-      <!-- Pergunta 12 -->
-      <details class="faq-item">
-        <summary>Como saber se a terapia vai dar certo?</summary>
-        <p>Em breve mais informações sobre este tema.</p>
-      </details>
+        <!-- Pergunta 11 -->
+        <details class="faq-item">
+          <summary>Qual a duração da orientação familiar?</summary>
+          <p>Em breve mais informações sobre este tema.</p>
+        </details>
+
+        <!-- Pergunta 12 -->
+        <details class="faq-item">
+          <summary>Como saber se a terapia vai dar certo?</summary>
+          <p>Em breve mais informações sobre este tema.</p>
+        </details>
+      </div>
     </div>
-  </div>
-</section>
-<!-- BLOCO 7 “CONTATOS”  -->
+  </section>
+  <!-- BLOCO 7 “CONTATOS”  -->
   <section id="contatos" class="contact-section" aria-labelledby="contatos-title">
     <div class="contact-wrap">
       <div class="contact-inner">
@@ -460,7 +517,8 @@
         <header class="contact-header">
           <span class="contact-eyebrow">Contato</span>
           <h2 id="contatos-title" class="contact-title">Vamos conversar e acompanhar as novidades?</h2>
-          <p class="contact-sub">Veja o post mais recente do blog e conecte-se pelas redes oficiais. Mantemos conteúdos úteis e comunicados importantes por lá.</p>
+          <p class="contact-sub">Veja o post mais recente do blog e conecte-se pelas redes oficiais. Mantemos conteúdos
+            úteis e comunicados importantes por lá.</p>
         </header>
 
         <!-- Posts do Blog (destaque) -->
@@ -468,14 +526,18 @@
           <!-- Post 1 -->
           <div class="blog-card">
             <div class="blog-media" aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" alt="Pessoa praticando meditação para lidar com ansiedade">
+              <img
+                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
+                alt="Pessoa praticando meditação para lidar com ansiedade">
             </div>
             <div class="blog-body">
               <div class="blog-kicker"><span class="dot"></span> Blog • Psicoeducação</div>
               <h3 class="blog-title">Como diferenciar ansiedade clínica de estresse do dia a dia</h3>
-              <p class="blog-excerpt">Um guia rápido com sinais de alerta, quando buscar ajuda e práticas baseadas em evidências para o cuidado contínuo.</p>
+              <p class="blog-excerpt">Um guia rápido com sinais de alerta, quando buscar ajuda e práticas baseadas em
+                evidências para o cuidado contínuo.</p>
               <div class="blog-actions">
-                <a class="btn btn-primary" href="/blog/como-diferenciar-ansiedade" aria-label="Ler post completo no blog">Ler artigo</a>
+                <a class="btn btn-primary" href="/blog/como-diferenciar-ansiedade"
+                  aria-label="Ler post completo no blog">Ler artigo</a>
                 <a class="btn btn-ghost" href="/blog" aria-label="Abrir o blog">Ver todos os posts</a>
               </div>
             </div>
@@ -484,14 +546,18 @@
           <!-- Post 2 -->
           <div class="blog-card">
             <div class="blog-media" aria-hidden="true">
-              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" alt="Pessoa praticando autocuidado com momento de relaxamento">
+              <img
+                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
+                alt="Pessoa praticando autocuidado com momento de relaxamento">
             </div>
             <div class="blog-body">
               <div class="blog-kicker"><span class="dot"></span> Blog • Bem-estar</div>
               <h3 class="blog-title">5 práticas de autocuidado que realmente funcionam</h3>
-              <p class="blog-excerpt">Estratégias baseadas em evidências para incluir o autocuidado genuíno na rotina sem cair nas armadilhas do mercado.</p>
+              <p class="blog-excerpt">Estratégias baseadas em evidências para incluir o autocuidado genuíno na rotina
+                sem cair nas armadilhas do mercado.</p>
               <div class="blog-actions">
-                <a class="btn btn-primary" href="/blog/praticas-autocuidado" aria-label="Ler post completo no blog">Ler artigo</a>
+                <a class="btn btn-primary" href="/blog/praticas-autocuidado" aria-label="Ler post completo no blog">Ler
+                  artigo</a>
                 <a class="btn btn-ghost" href="/blog" aria-label="Abrir o blog">Ver todos os posts</a>
               </div>
             </div>
@@ -500,14 +566,18 @@
           <!-- Post 3 -->
           <div class="blog-card">
             <div class="blog-media" aria-hidden="true">
-              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" alt="Duas pessoas conversando sobre relacionamentos saudáveis">
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
+                alt="Duas pessoas conversando sobre relacionamentos saudáveis">
             </div>
             <div class="blog-body">
               <div class="blog-kicker"><span class="dot"></span> Blog • Relacionamentos</div>
               <h3 class="blog-title">Limites saudáveis em relacionamentos: guia prático</h3>
-              <p class="blog-excerpt">Como estabelecer, comunicar e manter limites claros para construir relacionamentos mais saudáveis e autênticos.</p>
+              <p class="blog-excerpt">Como estabelecer, comunicar e manter limites claros para construir relacionamentos
+                mais saudáveis e autênticos.</p>
               <div class="blog-actions">
-                <a class="btn btn-primary" href="/blog/limites-relacionamentos" aria-label="Ler post completo no blog">Ler artigo</a>
+                <a class="btn btn-primary" href="/blog/limites-relacionamentos"
+                  aria-label="Ler post completo no blog">Ler artigo</a>
                 <a class="btn btn-ghost" href="/blog" aria-label="Abrir o blog">Ver todos os posts</a>
               </div>
             </div>
@@ -516,14 +586,18 @@
           <!-- Post 4 -->
           <div class="blog-card">
             <div class="blog-media" aria-hidden="true">
-              <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" alt="Pessoa dormindo tranquilamente para boa qualidade do sono">
+              <img
+                src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
+                alt="Pessoa dormindo tranquilamente para boa qualidade do sono">
             </div>
             <div class="blog-body">
               <div class="blog-kicker"><span class="dot"></span> Blog • Saúde Mental</div>
               <h3 class="blog-title">A ciência do sono: como melhorar sua qualidade de descanso</h3>
-              <p class="blog-excerpt">Descobertas recentes sobre os ciclos do sono e técnicas comprovadas para transformar suas noites e impactar sua saúde mental.</p>
+              <p class="blog-excerpt">Descobertas recentes sobre os ciclos do sono e técnicas comprovadas para
+                transformar suas noites e impactar sua saúde mental.</p>
               <div class="blog-actions">
-                <a class="btn btn-primary" href="/blog/ciencia-sono" aria-label="Ler post completo no blog">Ler artigo</a>
+                <a class="btn btn-primary" href="/blog/ciencia-sono" aria-label="Ler post completo no blog">Ler
+                  artigo</a>
                 <a class="btn btn-ghost" href="/blog" aria-label="Abrir o blog">Ver todos os posts</a>
               </div>
             </div>
@@ -581,12 +655,13 @@
       <div class="footer-logo">
         <img src="Logo_ana_roxa.svg" alt="Ana Borges Psicóloga" width="120" height="auto">
       </div>
-      
+
       <div class="footer-grid">
         <!-- Sobre -->
         <div class="footer-col">
           <h4>Sobre</h4>
-          <p>Atendimento psicológico, psicoeducação e produção de conteúdo. Espaço seguro e acolhedor para desenvolvimento pessoal.</p>
+          <p>Atendimento psicológico, psicoeducação e produção de conteúdo. Espaço seguro e acolhedor para
+            desenvolvimento pessoal.</p>
         </div>
 
         <!-- Links rápidos -->
@@ -610,19 +685,31 @@
           <div class="footer-socials">
             <!-- Instagram -->
             <a href="https://www.instagram.com/SEU-USUARIO" target="_blank" aria-label="Instagram">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.59.96 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.96-.5 2.66a5.36 5.36 0 0 1-1.24 1.92 5.36 5.36 0 0 1-1.92 1.24c-.7.26-1.49.45-2.66.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.96-.24-2.66-.5a5.36 5.36 0 0 1-1.92-1.24A5.36 5.36 0 0 1 .5 19.2c-.26-.7-.45-1.49-.5-2.66C-.06 15.27-.07 14.9-.07 11.7s.01-3.58.07-4.85c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.59-.6 1.2-.96 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.42 2.21 8.8 2.2 12 2.2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.59.96 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.96-.5 2.66a5.36 5.36 0 0 1-1.24 1.92 5.36 5.36 0 0 1-1.92 1.24c-.7.26-1.49.45-2.66.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.96-.24-2.66-.5a5.36 5.36 0 0 1-1.92-1.24A5.36 5.36 0 0 1 .5 19.2c-.26-.7-.45-1.49-.5-2.66C-.06 15.27-.07 14.9-.07 11.7s.01-3.58.07-4.85c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.59-.6 1.2-.96 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.42 2.21 8.8 2.2 12 2.2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" />
+              </svg>
             </a>
             <!-- TikTok -->
             <a href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" aria-label="TikTok">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z" />
+              </svg>
             </a>
             <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z" />
+              </svg>
             </a>
             <!-- YouTube -->
             <a href="https://www.youtube.com/@SEU-CANAL" target="_blank" aria-label="YouTube">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32 32 0 0 0 0 12a32 32 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.8.5 9.3.5 9.3.5s7.5 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32 32 0 0 0 24 12a32 32 0 0 0-.5-5.8ZM9.8 15.5v-7l6.2 3.5-6.2 3.5Z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32 32 0 0 0 0 12a32 32 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.8.5 9.3.5 9.3.5s7.5 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32 32 0 0 0 24 12a32 32 0 0 0-.5-5.8ZM9.8 15.5v-7l6.2 3.5-6.2 3.5Z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -639,7 +726,7 @@
     const observeSection2 = () => {
       const header = document.querySelector('.help2-header');
       const cards = document.querySelectorAll('.help2-card');
-      
+
       // Observer para o header
       const headerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -652,7 +739,7 @@
         threshold: 0.2,
         rootMargin: '0px 0px -30px 0px'
       });
-      
+
       // Observer para os cards
       const cardsObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -661,7 +748,7 @@
             setTimeout(() => {
               entry.target.classList.add('animate-in');
             }, index * 150); // 150ms de delay entre cada card
-            
+
             cardsObserver.unobserve(entry.target);
           }
         });
@@ -669,14 +756,15 @@
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
       });
-      
+
       // Observar elementos
       if (header) headerObserver.observe(header);
       cards.forEach(card => cardsObserver.observe(card));
     };
-    
+
     // Inicializar quando o DOM estiver pronto
     document.addEventListener('DOMContentLoaded', observeSection2);
   </script>
 </body>
+
 </html>
