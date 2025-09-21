@@ -117,10 +117,12 @@ body {
 
 /* Posts do Blog (grid de 4 posts) */
 .blog-feature {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 16px
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 16px;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .blog-card {
@@ -131,7 +133,9 @@ body {
     background: var(--surface);
     display: flex;
     flex-direction: column;
-    height: 100%
+    height: 100%;
+    width: 350px;
+    max-width: 100%;
 }
 
 .blog-media {
@@ -328,7 +332,7 @@ body {
 .footer {
     background: linear-gradient(120deg, #CA73B0, #5CC8CB);
     color: #fff;
-    padding: clamp(32px, 4vw, 48px) 20px
+    padding: clamp(20px, 3vw, 32px) 20px
 }
 
 .footer-inner {
@@ -439,7 +443,7 @@ body {
 @media (min-width:1040px) {
     .blog-feature {
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px
+        gap: 80px
     }
 
     .social-grid {
@@ -994,7 +998,7 @@ html {
 }
 
 .help2-inner {
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto
 }
 
@@ -1048,7 +1052,7 @@ html {
 
 
 .help2-grid {
-    --card-w: 300px;
+    --card-w: 360px;
     --gap: 24px;
     
     display: flex;
@@ -1059,11 +1063,11 @@ html {
     margin: clamp(16px, 3vw, 24px) auto 0;
     padding: 0 var(--gap);
 }
-
 .help2-card {
     width: var(--card-w);
     min-width: var(--card-w);
     flex: 0 1 var(--card-w);
+    height: 200px;
 }
 
 @media (max-width: 768px) {

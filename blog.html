@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Ana Borges | Psicóloga</title>
+    <meta name="description" content="Artigos sobre psicoeducação, bem-estar, relacionamentos e saúde mental por Ana Borges, psicóloga especializada em terapia cognitivo-comportamental.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog-styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-bar">
+            <a href="/" class="brand" aria-label="Ana Borges - Página inicial">
+                <img src="assets/logo_somente_icone.svg" alt="Logo Ana Borges" class="brand-mark">
+                <span class="brand-type">Ana Borges</span>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Navegação principal">
+                <a href="/#sobre">Sobre</a>
+                <a href="/#atuacao">Atuação</a>
+                <a href="/#valores">Valores</a>
+                <a href="/#contato">Contato</a>
+            </nav>
+
+            <div class="header-socials">
+                <a class="btn-blog" href="/" aria-label="Voltar ao início">
+                    Início
+                </a>
+                <a class="social-link" href="https://www.instagram.com/anaborgespsico/" target="_blank" rel="noopener" aria-label="Instagram da Ana Borges">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <details class="nav-mobile">
+                <summary aria-label="Menu de navegação mobile">
+                    <span class="hamburger"></span>
+                </summary>
+                <div class="nav-panel">
+                    <a href="/#sobre">Sobre</a>
+                    <a href="/#atuacao">Atuação</a>
+                    <a href="/#valores">Valores</a>
+                    <a href="/#contato">Contato</a>
+                    <a class="btn-cta mobile" href="/">Início</a>
+                </div>
+            </details>
+        </div>
+    </header>
+
+    <!-- Hero do Blog -->
+    <section class="blog-hero">
+        <div class="blog-hero-content">
+            <div class="blog-hero-text">
+                <span class="blog-eyebrow">Blog</span>
+                <h1 class="blog-hero-title">Psicoeducação e Bem-estar</h1>
+                <p class="blog-hero-sub">Artigos baseados em evidências científicas sobre saúde mental, relacionamentos e desenvolvimento pessoal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="blog-filters">
+        <div class="blog-filters-inner">
+            <h2 class="visually-hidden">Filtrar posts por categoria</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="todos">Todos</button>
+                <button class="filter-btn" data-category="psicoeducacao">Psicoeducação</button>
+                <button class="filter-btn" data-category="bem-estar">Bem-estar</button>
+                <button class="filter-btn" data-category="relacionamentos">Relacionamentos</button>
+                <button class="filter-btn" data-category="desenvolvimento">Desenvolvimento</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Posts -->
+    <main class="blog-main">
+        <div class="blog-container">
+            <div class="blog-grid" id="blog-grid">
+                
+                <!-- Post 1 -->
+                <article class="blog-post-card" data-category="psicoeducacao">
+                    <div class="post-media">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" 
+                             alt="Pessoa praticando meditação para lidar com ansiedade">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Psicoeducação</span>
+                            <span class="post-date">15 de Setembro, 2025</span>
+                        </div>
+                        <h3 class="post-title">Como diferenciar ansiedade clínica de estresse do dia a dia</h3>
+                        <p class="post-excerpt">Um guia prático com sinais de alerta, quando buscar ajuda profissional e estratégias baseadas em evidências para o cuidado contínuo da saúde mental.</p>
+                        <div class="post-actions">
+                            <a href="blog/como-diferenciar-ansiedade.html" class="btn btn-primary">Ler artigo completo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-post-card" data-category="bem-estar">
+                    <div class="post-media">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" 
+                             alt="Pessoa praticando autocuidado com momento de relaxamento">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Bem-estar</span>
+                            <span class="post-date">10 de Setembro, 2025</span>
+                        </div>
+                        <h3 class="post-title">5 práticas de autocuidado que realmente funcionam</h3>
+                        <p class="post-excerpt">Estratégias baseadas em evidências científicas para incluir o autocuidado genuíno na rotina diária, sem cair nas armadilhas do mercado de bem-estar.</p>
+                        <div class="post-actions">
+                            <a href="blog/praticas-autocuidado.html" class="btn btn-primary">Ler artigo completo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-post-card" data-category="relacionamentos">
+                    <div class="post-media">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" 
+                             alt="Duas pessoas conversando sobre relacionamentos saudáveis">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Relacionamentos</span>
+                            <span class="post-date">5 de Setembro, 2025</span>
+                        </div>
+                        <h3 class="post-title">Limites saudáveis em relacionamentos: guia prático</h3>
+                        <p class="post-excerpt">Como estabelecer, comunicar e manter limites claros para construir relacionamentos mais saudáveis, autênticos e equilibrados em todas as esferas da vida.</p>
+                        <div class="post-actions">
+                            <a href="blog/limites-relacionamentos.html" class="btn btn-primary">Ler artigo completo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="blog-post-card" data-category="desenvolvimento">
+                    <div class="post-media">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" 
+                             alt="Pessoa refletindo sobre crescimento pessoal">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Desenvolvimento</span>
+                            <span class="post-date">1 de Setembro, 2025</span>
+                        </div>
+                        <h3 class="post-title">Autoestima saudável: mitos e verdades</h3>
+                        <p class="post-excerpt">Desmistificando conceitos sobre autoestima e apresentando estratégias práticas baseadas na psicologia cognitivo-comportamental para desenvolver uma relação mais saudável consigo mesmo.</p>
+                        <div class="post-actions">
+                            <a href="blog/autoestima-saudavel.html" class="btn btn-primary">Ler artigo completo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="blog-post-card" data-category="psicoeducacao">
+                    <div class="post-media">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" 
+                             alt="Pessoa lendo sobre saúde mental">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Psicoeducação</span>
+                            <span class="post-date">28 de Agosto, 2025</span>
+                        </div>
+                        <h3 class="post-title">O que esperar da primeira sessão de terapia</h3>
+                        <p class="post-excerpt">Um guia completo para quem está considerando iniciar o processo terapêutico, incluindo como escolher o profissional adequado e o que acontece nas primeiras sessões.</p>
+                        <div class="post-actions">
+                            <a href="blog/primeira-sessao-terapia.html" class="btn btn-primary">Ler artigo completo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="blog-post-card" data-category="bem-estar">
+                    <div class="post-media">
+                        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80" 
+                             alt="Pessoa praticando mindfulness">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Bem-estar</span>
+                            <span class="post-date">20 de Agosto, 2025</span>
+                        </div>
+                        <h3 class="post-title">Mindfulness na prática: técnicas para o dia a dia</h3>
+                        <p class="post-excerpt">Exercícios simples e baseados em evidências para incorporar a atenção plena na rotina, reduzir o estresse e melhorar o bem-estar mental de forma sustentável.</p>
+                        <div class="post-actions">
+                            <a href="blog/mindfulness-pratico.html" class="btn btn-primary">Ler artigo completo</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2 class="newsletter-title">Não perca nenhum artigo</h2>
+            <p class="newsletter-text">Receba conteúdos exclusivos sobre psicoeducação e bem-estar diretamente no seu e-mail.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail" required class="newsletter-input">
+                <button type="submit" class="newsletter-btn">Inscrever-se</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="assets/logo_ana.svg" alt="Ana Borges - Psicóloga">
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>Consultas online e presenciais</p>
+                    <p>WhatsApp: (11) 99999-9999</p>
+                    <p>contato@anaborgespsico.com</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="/#sobre">Sobre</a></li>
+                        <li><a href="/#atuacao">Atuação</a></li>
+                        <li><a href="/#valores">Valores</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Redes Sociais</h4>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/anaborgespsico/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copy">
+                <p>&copy; 2025 Ana Borges. Todos os direitos reservados. CRP: XX/XXXXX</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-script.js"></script>
+</body>
+
+</html>

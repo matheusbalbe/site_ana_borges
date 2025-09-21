@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limites saudáveis em relacionamentos: guia prático | Ana Borges</title>
+    <meta name="description" content="Como estabelecer, comunicar e manter limites claros para construir relacionamentos mais saudáveis, autênticos e equilibrados em todas as esferas da vida.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Estilos específicos para artigo individual */
+        .article-hero {
+            padding: clamp(80px, 10vw, 120px) 20px clamp(60px, 8vw, 80px);
+            background: 
+                radial-gradient(1200px 700px at 100% -20%, rgba(202, 115, 176, .15), transparent 60%),
+                radial-gradient(1000px 650px at 0% 0%, rgba(92, 200, 203, .15), transparent 60%),
+                #ffffff;
+            color: #121212;
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .article-category {
+            background: linear-gradient(135deg, #5CC8CB, #CA73B0);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            font-size: .85rem;
+        }
+
+        .article-date {
+            color: #777;
+            font-size: .9rem;
+        }
+
+        .article-title {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: #222;
+            margin: 0 0 20px;
+            background: linear-gradient(90deg, #CA73B0, #5CC8CB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .article-subtitle {
+            font-size: clamp(1.1rem, 2.4vw, 1.3rem);
+            line-height: 1.5;
+            color: #666;
+            margin: 0 0 40px;
+            font-style: italic;
+            max-width: 70ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 0 0 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
+            border: 1px solid rgba(0, 0, 0, .08);
+        }
+
+        .article-content {
+            background: #fff;
+            padding: clamp(30px, 5vw, 60px);
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .08);
+            border: 1px solid rgba(0, 0, 0, .06);
+            position: relative;
+            margin-top: -80px;
+            z-index: 2;
+        }
+
+        .article-body {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .article-body h2 {
+            font-size: clamp(1.6rem, 3vw, 2rem);
+            font-weight: 700;
+            color: #222;
+            margin: 50px 0 25px;
+            background: linear-gradient(90deg, #CA73B0, #5CC8CB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .article-body h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            font-weight: 600;
+            color: #333;
+            margin: 40px 0 20px;
+        }
+
+        .article-body p {
+            margin: 0 0 24px;
+            text-align: justify;
+        }
+
+        .article-body p:first-child {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 25px 0;
+            padding-left: 35px;
+        }
+
+        .article-body li {
+            margin: 12px 0;
+            line-height: 1.7;
+        }
+
+        .article-body strong {
+            color: #222;
+            font-weight: 700;
+        }
+
+        .article-body blockquote {
+            background: linear-gradient(135deg, rgba(92, 200, 203, .05), rgba(202, 115, 176, .05));
+            border-left: 4px solid #5CC8CB;
+            padding: 25px 30px;
+            margin: 40px 0;
+            font-style: italic;
+            border-radius: 0 16px 16px 0;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(92, 200, 203, .08), rgba(202, 115, 176, .08));
+            border: 2px solid rgba(92, 200, 203, .2);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .highlight-box h4 {
+            color: #222;
+            font-weight: 700;
+            margin: 0 0 20px;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box p, .highlight-box ul {
+            margin-bottom: 0;
+        }
+
+        .example-box {
+            background: #f8f9fb;
+            border: 1px solid rgba(0, 0, 0, .1);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+        }
+
+        .example-box h4 {
+            color: #CA73B0;
+            font-weight: 700;
+            margin: 0 0 15px;
+            font-size: 1.15rem;
+        }
+
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .dos-donts {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .do-box {
+            background: rgba(76, 175, 80, .1);
+            border: 2px solid rgba(76, 175, 80, .3);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .dont-box {
+            background: rgba(244, 67, 54, .1);
+            border: 2px solid rgba(244, 67, 54, .3);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .do-box h4 {
+            color: #4CAF50;
+            margin: 0 0 15px;
+            font-weight: 700;
+        }
+
+        .dont-box h4 {
+            color: #f44336;
+            margin: 0 0 15px;
+            font-weight: 700;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 50px 0 0;
+            color: #5CC8CB;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all .3s ease;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: rgba(92, 200, 203, .1);
+        }
+
+        .back-to-home:hover {
+            color: #fff;
+            background: linear-gradient(135deg, #5CC8CB, #CA73B0);
+            transform: translateX(-6px);
+        }
+
+        .author-bio {
+            background: #f8f9fb;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 50px 0 30px;
+            text-align: center;
+        }
+
+        .author-bio h4 {
+            color: #222;
+            margin: 0 0 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .author-bio p {
+            margin: 0;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .article-content {
+                margin-top: -40px;
+                padding: 25px 20px;
+            }
+            
+            .article-body {
+                font-size: 1.05rem;
+            }
+            
+            .article-meta {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CABEÇALHO -->
+  <header class="site-header" aria-label="Cabeçalho principal">
+    <div class="header-bar">
+      <!-- LOGO -->
+      <a href="#inicio" class="brand" aria-label="Voltar ao início">
+        <img class="brand-mark" src="../assets/Logo_ana_roxa.svg" alt="Ana Borges" style="width: 140px; height: 60px;" />
+      </a>
+
+      <!-- NAV DESKTOP -->
+    <nav class="nav-desktop" aria-label="Navegação principal">
+      <a href="../index.html#home">Início</a>
+      <a href="../index.html#quem-e-ana">Sobre</a>
+      <a href="../index.html#atuacao">Demandas</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../index.html#contatos">Contatos</a>
+    </nav>
+
+      <!-- SOCIAL LINKS -->
+      <div class="header-socials">
+        <a class="btn-blog" href="/blog" target="_blank" rel="noopener" aria-label="Acessar blog">
+          Blog
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener"
+          aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z" />
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener"
+          aria-label="TikTok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z" />
+          </svg>
+        </a>
+
+        <a class="social-link" href="https://www.instagram.com/anaborges.psic" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13-.38a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- NAV MOBILE (details/summary) -->
+      <details class="nav-mobile">
+        <summary aria-label="Abrir menu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </summary>
+        <nav class="nav-panel" aria-label="Menu móvel">
+          <a href="#home">Início</a>
+          <a href="#quem-e-ana">Sobre</a>
+          <a href="#atuacao">Demandas</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contatos">Contatos</a>
+          <div class="mobile-socials">
+            <a class="btn-blog mobile" href="/blog" target="_blank" rel="noopener">Blog</a>
+            <a class="social-link mobile" href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener"
+              aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z" />
+              </svg>
+            </a>
+            <a class="social-link mobile" href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" rel="noopener"
+              aria-label="TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z" />
+              </svg>
+            </a>
+            <a class="social-link mobile" href="https://www.instagram.com/anaborges.psic" target="_blank" rel="noopener"
+              aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.13-.38a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0z" />
+              </svg>
+            </a>
+          </div>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+    <!-- Hero do Artigo -->
+    <section class="article-hero">
+        <div class="article-container">
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Relacionamentos</span>
+                    <span class="article-date">5 de Setembro, 2025</span>
+                </div>
+                
+                <h1 class="article-title">Limites saudáveis em relacionamentos: guia prático</h1>
+                
+                <p class="article-subtitle">
+                    Como estabelecer, comunicar e manter limites claros para construir relacionamentos mais saudáveis, autênticos e equilibrados em todas as esferas da vida.
+                </p>
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80" 
+                 alt="Duas pessoas conversando sobre relacionamentos saudáveis" 
+                 class="article-image">
+        </div>
+
+        <div class="article-container">
+            <div class="article-content">
+                <div class="article-body">
+                    <p>Estabelecer limites saudáveis é uma das habilidades mais importantes para manter relacionamentos equilibrados e autênticos. No entanto, muitas pessoas lutam com esse conceito, seja por medo de conflito, culpa ou simplesmente por não saberem como fazê-lo de forma eficaz.</p>
+
+                    <p>Como psicóloga, observo constantemente que a falta de limites claros está na raiz de muitos problemas relacionais – desde relacionamentos românticos até dinâmicas familiares e profissionais. Por isso, preparei este guia prático para ajudá-lo a compreender e implementar limites saudáveis em sua vida.</p>
+
+                    <h2>O que são limites saudáveis?</h2>
+                    
+                    <p>Limites são as <strong>diretrizes invisíveis</strong> que determinam como permitimos que outros nos tratem e como nos comportamos nos relacionamentos. Eles definem onde "eu" termino e "você" começa, criando um espaço seguro para que ambas as pessoas possam ser autênticas.</p>
+
+                    <p>Limites saudáveis <strong>não são muros</strong> que isolam as pessoas, mas sim cercas com portões – eles permitem conexão genuína enquanto protegem nosso bem-estar emocional, físico e mental.</p>
+
+                    <div class="highlight-box">
+                        <h4>🎯 Tipos de limites:</h4>
+                        <ul>
+                            <li><strong>Físicos:</strong> Espaço pessoal, toque, intimidade</li>
+                            <li><strong>Emocionais:</strong> Sentimentos, responsabilidades emocionais</li>
+                            <li><strong>Mentais:</strong> Valores, opiniões, crenças</li>
+                            <li><strong>Temporais:</strong> Como você usa seu tempo</li>
+                            <li><strong>Digitais:</strong> Redes sociais, comunicação online</li>
+                            <li><strong>Financeiros:</strong> Dinheiro, recursos materiais</li>
+                        </ul>
+                    </div>
+
+                    <h2>Por que os limites são essenciais?</h2>
+
+                    <p>Pesquisas em psicologia mostram que pessoas com limites bem definidos apresentam:</p>
+
+                    <ul>
+                        <li>Maior autoestima e autoconfiança</li>
+                        <li>Relacionamentos mais satisfatórios e duradouros</li>
+                        <li>Menor incidência de ansiedade e depressão</li>
+                        <li>Maior capacidade de intimidade genuína</li>
+                        <li>Redução significativa do estresse</li>
+                        <li>Melhor performance profissional</li>
+                    </ul>
+
+                    <blockquote>
+                        "Limites não são construídos para manter as pessoas afastadas, mas para ensinar às pessoas como nos amar melhor." - Rachel Brathen
+                    </blockquote>
+
+                    <h2>Sinais de que você precisa estabelecer limites</h2>
+
+                    <p>Você pode precisar trabalhar seus limites se:</p>
+
+                    <ul>
+                        <li>Frequentemente se sente sobrecarregado ou esgotado após interações sociais</li>
+                        <li>Tem dificuldade em dizer "não" mesmo quando quer</li>
+                        <li>Se sente responsável pelas emoções e problemas dos outros</li>
+                        <li>Permite comportamentos que o fazem se sentir desconfortável</li>
+                        <li>Evita conflitos a qualquer custo</li>
+                        <li>Se ressente frequentemente das pessoas próximas</li>
+                        <li>Sente que está sempre dando mais do que recebe</li>
+                    </ul>
+
+                    <h2>Como estabelecer limites saudáveis</h2>
+
+                    <h3>1. Autoconhecimento: identifique seus limites</h3>
+
+                    <p>Antes de comunicar limites aos outros, você precisa identificá-los claramente:</p>
+
+                    <example-box class="example-box">
+                        <h4>Exercício de reflexão:</h4>
+                        <ul>
+                            <li>Quais comportamentos dos outros me fazem sentir desconfortável?</li>
+                            <li>Em que situações me sinto esgotado ou explorado?</li>
+                            <li>Que valores são inegociáveis para mim?</li>
+                            <li>Como quero ser tratado nos relacionamentos?</li>
+                        </ul>
+                    </example-box>
+
+                    <h3>2. Comunicação clara e direta</h3>
+
+                    <p>A forma como você comunica seus limites é crucial para sua eficácia:</p>
+
+                    <div class="dos-donts">
+                        <div class="do-box">
+                            <h4>✅ FAÇA:</h4>
+                            <ul>
+                                <li>Seja claro e específico</li>
+                                <li>Use "eu" em vez de "você"</li>
+                                <li>Mantenha um tom respeitoso mas firme</li>
+                                <li>Explique as consequências se necessário</li>
+                            </ul>
+                        </div>
+
+                        <div class="dont-box">
+                            <h4>❌ EVITE:</h4>
+                            <ul>
+                                <li>Ser vago ou ambíguo</li>
+                                <li>Se justificar excessivamente</li>
+                                <li>Usar tom agressivo ou defensivo</li>
+                                <li>Estabelecer limites no calor do momento</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>3. Exemplos práticos de comunicação</h3>
+
+                    <div class="example-box">
+                        <h4>Limite temporal:</h4>
+                        <p><strong>Em vez de:</strong> "Você sempre me interrompe no trabalho!"</p>
+                        <p><strong>Diga:</strong> "Preciso de concentração durante essas horas. Podemos conversar depois das 17h ou agendar um momento específico?"</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Limite emocional:</h4>
+                        <p><strong>Em vez de:</strong> "Você é muito dramático!"</p>
+                        <p><strong>Diga:</strong> "Entendo que você está passando por um momento difícil, mas não me sinto confortável sendo o único apoio. Que tal buscarmos ajuda profissional juntos?"</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Limite físico:</h4>
+                        <p><strong>Em vez de:</strong> Aceitar desconfortavelmente</p>
+                        <p><strong>Diga:</strong> "Prefiro não receber abraços no trabalho. Um cumprimento ou aperto de mão está ótimo para mim."</p>
+                    </div>
+
+                    <h2>Mantendo limites a longo prazo</h2>
+
+                    <p>Estabelecer limites é apenas o primeiro passo – mantê-los consistentemente é o verdadeiro desafio:</p>
+
+                    <h3>Seja consistente</h3>
+                    <p>Limites que não são mantidos consistentemente enviam mensagens confusas. Se você estabelece um limite, precisa estar preparado para mantê-lo mesmo quando for testado.</p>
+
+                    <h3>Prepare-se para resistência</h3>
+                    <p>É normal que as pessoas inicialmente resistam aos seus novos limites, especialmente se você nunca os teve antes. Isso não significa que você deve desistir – significa que você está mudando uma dinâmica estabelecida.</p>
+
+                    <h3>Pratique a autocompaixão</h3>
+                    <p>Estabelecer limites é uma habilidade que se desenvolve com o tempo. Seja paciente consigo mesmo enquanto aprende e não se critique por "falhas" ocasionais.</p>
+
+                    <div class="highlight-box">
+                        <h4>⚠️ Atenção especial:</h4>
+                        <p>Se você está em um relacionamento abusivo, estabelecer limites pode ser mais complexo e potencialmente perigoso. Considere buscar ajuda profissional especializada ou contatar serviços de apoio como o Centro de Valorização da Vida (188) ou a Central de Atendimento à Mulher (180).</p>
+                    </div>
+
+                    <h2>Limites em diferentes contextos</h2>
+
+                    <h3>Relacionamentos familiares</h3>
+                    <p>Famílias frequentemente têm dinâmicas estabelecidas há muito tempo. Estabelecer novos limites pode ser desafiador, mas é possível com paciência e consistência.</p>
+
+                    <h3>Relacionamentos românticos</h3>
+                    <p>Limites saudáveis em relacionamentos íntimos criam espaço para que cada pessoa mantenha sua individualidade enquanto constrói uma vida compartilhada.</p>
+
+                    <h3>Ambiente profissional</h3>
+                    <p>Limites no trabalho protegem contra burnout e mantêm relacionamentos profissionais respeitosos.</p>
+
+                    <h3>Amizades</h3>
+                    <p>Amizades saudáveis respeitam os limites mútuos e se fortalecem quando cada pessoa se sente segura para ser autêntica.</p>
+
+                    <h2>Quando buscar ajuda profissional</h2>
+
+                    <p>Considere terapia se:</p>
+
+                    <ul>
+                        <li>Você tem extrema dificuldade em estabelecer qualquer tipo de limite</li>
+                        <li>Estabelecer limites causa ansiedade severa ou ataques de pânico</li>
+                        <li>Você está em relacionamentos repetidamente destrutivos</li>
+                        <li>Tem histórico de trauma que afeta sua capacidade de se proteger</li>
+                        <li>Sente que não merece ter limites respeitados</li>
+                    </ul>
+
+                    <h2>Considerações finais</h2>
+
+                    <p>Estabelecer limites saudáveis é um ato de <strong>amor-próprio e respeito mútuo</strong>. Não se trata de ser egoísta ou fechado, mas sim de criar condições para relacionamentos mais autênticos e satisfatórios.</p>
+
+                    <p>Lembre-se: você tem o direito de se sentir seguro e respeitado em todos os seus relacionamentos. Limites claros não afastam as pessoas certas – eles atraem e mantêm relacionamentos mais saudáveis.</p>
+
+                    <p>Comece pequeno, seja consistente e tenha paciência consigo mesmo neste processo. Com o tempo, estabelecer e manter limites saudáveis se tornará natural, transformando positivamente todas as áreas da sua vida.</p>
+
+                    <div class="author-bio">
+                        <h4>Sobre a autora</h4>
+                        <p>Ana Borges é psicóloga especializada em Terapia Cognitivo-Comportamental, com vasta experiência no tratamento de questões relacionais e desenvolvimento de habilidades sociais. Atende em consultório presencial e online, sempre focando no empoderamento de seus pacientes para construírem relacionamentos mais saudáveis.</p>
+                    </div>
+
+                    <a href="../index.html" class="back-to-home">
+                        ← Voltar ao site
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="../assets/logo_ana_escrita_branca.svg" alt="Ana Borges Psicóloga" width="140" height="auto">
+      </div>
+
+      <div class="footer-grid">
+        <!-- Sobre -->
+        <div class="footer-col">
+          <h4>Sobre</h4>
+          <p>Atendimento psicológico, psicoeducação e produção de conteúdo. Espaço seguro e acolhedor para
+            desenvolvimento pessoal.</p>
+        </div>
+
+        <!-- Links rápidos -->
+        <div class="footer-col">
+          <h4>Links rápidos</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contatos">Contatos</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato e redes -->
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@anaborgespsico.com">contato@anaborges.psic.com</a></li>
+            <li><a href="https://wa.me/5599999999999" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+          <div class="footer-socials">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/anaborges.psic" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.59.96 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.96-.5 2.66a5.36 5.36 0 0 1-1.24 1.92 5.36 5.36 0 0 1-1.92 1.24c-.7.26-1.49.45-2.66.5-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.96-.24-2.66-.5a5.36 5.36 0 0 1-1.92-1.24A5.36 5.36 0 0 1 .5 19.2c-.26-.7-.45-1.49-.5-2.66C-.06 15.27-.07 14.9-.07 11.7s.01-3.58.07-4.85c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.59-.6 1.2-.96 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.42 2.21 8.8 2.2 12 2.2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" />
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@SEU-USUARIO" target="_blank" aria-label="TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21.5 8.2c-2.58 0-4.86-1.06-6.53-2.75v8.74a5.98 5.98 0 1 1-5.98-5.98c.3 0 .59.03.87.08v3.09a2.9 2.9 0 1 0 2.9 2.9V1.5h2.84c.26 3 2.61 5.37 5.8 5.62v3.08Z" />
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M6.94 6.5A2.44 2.44 0 1 1 6.93 1.6a2.44 2.44 0 0 1 0 4.9ZM1.5 22.4h5V8.4h-5v14ZM9 22.4h5v-7.55c0-2 .38-3.94 2.85-3.94 2.43 0 2.47 2.27 2.47 4.06v7.43h5V14c0-4.5-1-8-6.3-8-2.55 0-4.26 1.4-4.96 2.72h-.07V8.4H9c.07 1.83 0 14 0 14Z" />
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@SEU-CANAL" target="_blank" aria-label="YouTube">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32 32 0 0 0 0 12a32 32 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.8.5 9.3.5 9.3.5s7.5 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32 32 0 0 0 24 12a32 32 0 0 0-.5-5.8ZM9.8 15.5v-7l6.2 3.5-6.2 3.5Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        &copy; 2025 Ana Borges Psicóloga. Todos os direitos reservados. CRP-04/78184
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
