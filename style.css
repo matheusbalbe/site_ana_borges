@@ -440,6 +440,81 @@ body {
     }
 }
 
+/* Mobile Footer Alignment */
+@media (max-width: 719px) {
+    .footer-inner {
+        text-align: center;
+    }
+    
+    .footer-logo {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footer-logo img {
+        display: block;
+        margin: 0 auto;
+        max-width: 140px;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .footer-col h4 {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    
+    .footer-col p,
+    .footer-col ul {
+        text-align: center;
+    }
+    
+    .footer-socials {
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    /* Padronização dos títulos das seções em mobile */
+    .contact-title,
+    .help2-title,
+    .about-title,
+    .atuacao-title,
+    .values-title,
+    .faq-title {
+        font-size: 2rem !important;
+        text-align: center;
+        line-height: 1.2;
+        margin: 16px 0;
+    }
+    
+    /* Títulos de seção em mobile - tamanho padrão menor para telas pequenas */
+    @media (max-width: 480px) {
+        .contact-title,
+        .help2-title,
+        .about-title,
+        .atuacao-title,
+        .values-title,
+        .faq-title {
+            font-size: 1.75rem !important;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .contact-title,
+        .help2-title,
+        .about-title,
+        .atuacao-title,
+        .values-title,
+        .faq-title {
+            font-size: 1.5rem !important;
+        }
+    }
+}
+
 @media (min-width:1040px) {
     .blog-feature {
         grid-template-columns: repeat(4, 1fr);
@@ -1067,58 +1142,61 @@ html {
     width: var(--card-w);
     min-width: var(--card-w);
     flex: 0 1 var(--card-w);
-    height: 200px;
+    height: 230px;
 }
 
 @media (max-width: 768px) {
+    .home-hero__title {
+    margin: .2rem 0 .4rem;
+    font-size: clamp(2.2rem, 4.2vw, 2.6rem);
+    }
     .help2-grid {
         --gap: 16px;
-        min-width: 640px;
+        min-width: auto; /* Remove min-width fixo */
+        max-width: 100%; /* Garante que não ultrapasse a viewport */
+        flex-direction: column;
+        align-items: center;
     }
     
     .help2-card {
         width: 100%;
+        max-width: 800px; /* Largura máxima em mobile */
         min-width: 0;
-        flex: 1 1 100%;
+        flex: none;
     }
 }
 
 @media (max-width: 425px) {
     .help2-grid {
-        --gap: 16px;
-        min-width: 400px;
+        --gap: 12px;
+        padding: 0 16px; /* Reduz padding lateral */
     }
     
     .help2-card {
-        width: 100%;
-        min-width: 0;
-        flex: 1 1 100%;
+        max-width: 100%; /* Usa toda largura disponível */
     }
 }
 
 @media (max-width: 375px) {
     .help2-grid {
-        --gap: 16px;
-        min-width: 350px;
+        --gap: 12px;
+        padding: 0 12px;
     }
     
     .help2-card {
-        width: 100%;
-        min-width: 0;
-        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 320px) {
     .help2-grid {
-        --gap: 16px;
-        min-width: 300px;
+        --gap: 10px;
+        padding: 0 10px;
     }
     
     .help2-card {
-        width: 100%;
-        min-width: 0;
-        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 14px 16px; /* Reduz padding interno */
     }
 }
 
