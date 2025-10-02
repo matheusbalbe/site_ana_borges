@@ -361,13 +361,13 @@ body {
 
 .footer-col h4 {
     margin: 0 0 12px;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 700
 }
 
 .footer-col p {
     margin: 0;
-    font-size: .95rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     opacity: .9
 }
@@ -383,7 +383,7 @@ body {
 .footer-col a {
     color: #fff;
     text-decoration: none;
-    font-size: .95rem;
+    font-size: 1.05rem;
     transition: opacity .2s ease
 }
 
@@ -416,7 +416,7 @@ body {
     margin-top: 28px;
     padding-top: 20px;
     text-align: center;
-    font-size: .85rem;
+    font-size: .95rem;
     color: #f0f0f0
 }
 
@@ -550,7 +550,7 @@ body {
     max-width: 1200px;
     margin-inline: auto;
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 14px;
     padding: clamp(10px, 2vw, 14px) 16px;
@@ -585,8 +585,10 @@ body {
 /* Navegação desktop */
 .site-header .nav-desktop {
     display: none;
-    justify-self: center;
-    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
 }
 
 .site-header .nav-desktop a {
@@ -694,6 +696,8 @@ body {
 @media (min-width: 768px) {
     .site-header .nav-desktop {
         display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .site-header .header-socials {
@@ -802,7 +806,9 @@ body {
     }
 
     .site-header .nav-desktop {
-        display: inline-flex;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .site-header .btn-cta {
@@ -1026,26 +1032,20 @@ html {
 /* Foto + degradê */
 .home-hero__photo {
     position: relative;
-    min-height: 400px;
+    min-height: 500px;
     border-radius: 22px;
     overflow: hidden;
-    background:
-        radial-gradient(120% 80% at 70% 0%, rgba(202, 115, 176, .22), transparent 60%),
-        radial-gradient(120% 80% at 30% 100%, rgba(92, 200, 203, .22), transparent 60%),
-        #f6f7fb;
+    /* background: #f6f7fb; */
     border: 1px solid var(--ring);
-    box-shadow: 0 26px 56px rgba(13, 18, 33, .16), 0 8px 16px rgba(13, 18, 33, .10);
+    box-shadow: 0 16px 32px rgba(13, 18, 33, .12), 0 4px 12px rgba(13, 18, 33, .08);
 }
-
 .home-hero__photo img {
     position: absolute;
     inset: 0;
-    width: 100%;
+    width: 120%;
     height: 100%;
-    object-fit: cover;
-    mix-blend-mode: multiply;
-    /* cria efeito de degradê sobre a foto */
-    filter: saturate(1.02) contrast(1.02);
+    /* object-fit: cover; */
+    /* object-position: center; */
 }
 
 /* Layout responsivo */
@@ -1376,10 +1376,12 @@ html {
 
 .about-photo img {
     width: min(480px, 90vw);
-    height: 400px;
+    height: auto;
+    aspect-ratio: 4/5;
     display: block;
     border-radius: 20px;
-    object-fit: cover;
+    /* object-fit: cover; */
+    object-position: center;
     border: 1px solid rgba(0, 0, 0, .08);
     box-shadow: 0 22px 48px rgba(13, 18, 33, .16), 0 10px 16px rgba(13, 18, 33, .10);
 }
