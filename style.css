@@ -974,6 +974,41 @@ body {
     animation: fadeIn 0.3s ease;
 }
 
+/* Mobile social links */
+.site-header .mobile-socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.site-header .social-link.mobile {
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(92, 200, 203, 0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.site-header .social-link.mobile:hover {
+    transform: translateY(-2px);
+    background: rgba(92, 200, 203, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .social-link.mobile svg {
+    width: 20px;
+    height: 20px;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1004,8 +1039,10 @@ body {
 
 .site-header .mobile-socials {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
@@ -1022,7 +1059,8 @@ body {
 
 .social-link.mobile {
     display: flex;
-    flex-direction: row;
+    flex-direction: row!important;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     padding: clamp(10px, 2vw, 12px);
