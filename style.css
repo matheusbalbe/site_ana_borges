@@ -1362,15 +1362,20 @@ body {
 
 @media (max-width: 959px) {
     .home-hero__photo img {
-        object-fit: cover;
+        /* object-fit: ; */
         object-position: center top;
     }
 }
 
 @media (max-width: 480px) {
     .home-hero__photo img {
-        object-fit: cover;
+        position: relative;
+        width: 340px;
+        height: 250px;
+        object-fit: contain;
         object-position: center;
+        margin: 0 auto;
+        display: block;
     }
 }
 
@@ -1389,9 +1394,9 @@ body {
         grid-template-columns: 1.08fr .92fr;
     }
     
-    .home-hero__photo {
+    /* .home-hero__photo {
         min-height: 500px;
-    }
+    } */
 }
 
 @media (max-width: 959px) {
@@ -1407,8 +1412,8 @@ body {
     
     .home-hero__photo {
         order: -1;
-        height: clamp(288px, 52vw, 400px);
-        min-height: 280px;
+        /* height: clamp(288px, 52vw, 400px); */
+        min-height: 200px;
     }
     
     .home-hero__chiplist {
@@ -1434,6 +1439,24 @@ body {
 @media (max-width: 480px) {
     .home-hero {
         padding: 20px 16px;
+    }
+    
+    .home-hero__photo {
+        width: 280px;
+        height: 308px;
+        min-height: 308px;
+        margin: 0 auto;
+        flex-shrink: 0;
+    }
+    
+    .home-hero__photo img {
+        position: relative;
+        width: 280px;
+        height: 308px;
+        object-fit: contain;
+        object-position: center;
+        margin: 0 auto;
+        display: block;
     }
     
     .home-hero__title {
