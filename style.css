@@ -1804,6 +1804,25 @@ html {
     box-shadow: 0 22px 48px rgba(13, 18, 33, .16), 0 10px 16px rgba(13, 18, 33, .10);
 }
 
+/* Controle de exibição responsiva para fotos */
+.mobile-only {
+    display: block;
+}
+
+.desktop-only {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+    
+    .desktop-only {
+        display: block;
+    }
+}
+
 /* Acessibilidade utilitária */
 .visually-hidden {
     position: absolute !important;
