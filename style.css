@@ -65,8 +65,8 @@ body {
 
 /* ====== BLOCO CONTATOS ====== */
 .contact-section {
-    padding: clamp(28px, 4vw, 48px) 16px;
-    min-height: 100vh;
+    /* padding: clamp(28px, 4vw, 48px) 16px clamp(12px, 2vw, 24px); */
+    /* min-height: 100vh; */
     position: relative;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .contact-inner {
-    padding: clamp(20px, 3.6vw, 36px);
+    /* padding: clamp(20px, 3.6vw, 36px); */
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -95,8 +95,23 @@ body {
 .contact-header {
     display: grid;
     gap: .5rem;
-    margin-bottom: clamp(18px, 2.8vw, 22px);
-    text-align: center
+    padding: clamp(18px, 2.8vw, 22px) 0;
+    text-align: center;
+    background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .contact-eyebrow {
@@ -110,10 +125,10 @@ body {
     font-size: clamp(1.6rem, 3.2vw, 2.4rem);
     line-height: 1.15;
     margin: 0;
-    background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
+    /* background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent
+    color: transparent */
 }
 
 .contact-sub {
@@ -433,7 +448,8 @@ body {
 .footer-col a {
     color: #fff;
     text-decoration: none;
-    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    font-size: clamp(0.9rem, 2vw, 0.95rem);
+    opacity: 0.9;
     transition: all 0.3s ease;
     display: inline-block;
     padding: 4px 0;
@@ -590,7 +606,7 @@ body {
 .footer-col a {
     color: #fff;
     text-decoration: none;
-    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    font-size: clamp(0.9rem, 1.8vw, 0.95rem);
     transition: all 0.3s ease;
     display: inline-block;
     padding: 4px 0;
@@ -693,7 +709,7 @@ body {
 }
     
     /* Padronização dos títulos das seções em mobile */
-    .contact-title,
+    /* .contact-title, */
     .help2-title,
     .about-title,
     .atuacao-title,
@@ -1166,6 +1182,12 @@ body {
     font-size: clamp(0.8rem, 2vw, 0.85rem);
 }
 
+@media (max-width: 959px) {
+    .home-hero__eyebrow {
+        text-align: center;
+    }
+}
+
 .home-hero__title {
     margin: clamp(8px, 1.5vw, 12px) 0 clamp(12px, 2vw, 16px);
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -1196,6 +1218,13 @@ body {
     margin: 0 0 clamp(8px, 1.5vw, 12px);
     color: var(--muted);
     font-size: clamp(0.85rem, 2vw, 0.9rem);
+}
+
+@media (max-width: 959px) {
+    .home-hero__chipslabel {
+        text-align: center;
+        width: 100%;
+    }
 }
 
 .home-hero__chiplist {
@@ -1326,9 +1355,23 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     transition: transform 0.3s ease;
+}
+
+@media (max-width: 959px) {
+    .home-hero__photo img {
+        object-fit: contain;
+        object-position: center top;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-hero__photo img {
+        object-fit: contain;
+        object-position: center;
+    }
 }
 
 .home-hero__photo:hover img {
@@ -1359,11 +1402,12 @@ body {
     
     .home-hero__wrap {
         min-height: auto;
+        gap: clamp(1px, 1vw, 40px);
     }
     
     .home-hero__photo {
         order: -1;
-        height: clamp(280px, 52vw, 400px);
+        height: clamp(288px, 52vw, 400px);
         min-height: 280px;
     }
     
@@ -2011,6 +2055,49 @@ html {
 
 
 
+
+/* ===== SEÇÃO CONTATO ===== */
+.contact-section {
+    /* padding: clamp(40px, 6vw, 80px) max(16px, 4vw); */
+    background:
+        radial-gradient(900px 480px at 10% 0%, rgba(92, 200, 203, .12), transparent 60%),
+        radial-gradient(900px 520px at 100% 0%, rgba(202, 115, 176, .12), transparent 60%),
+        #ffffff;
+    color: #121212;
+}
+
+.contact-inner {
+    /* max-width: min(1100px, 95%); */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contact-header {
+    text-align: center;
+    padding: clamp(22px, 5vw, 40px) 0;
+    /* padding: 0 max(16px, 3vw); */
+}
+
+.contact-eyebrow {
+    font-size: clamp(0.8rem, 2vw, 0.85rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.contact-title {
+    font-size: clamp(1rem, 3vw, 2.3rem);
+    margin: 0 auto 16px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+    max-width: 30ch;
+}
 
 /* ===== BLOCO 6 — TALVEZ VOCÊ TENHA DÚVIDAS ===== */
 .faq-section {
