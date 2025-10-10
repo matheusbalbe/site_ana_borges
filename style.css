@@ -1362,14 +1362,14 @@ body {
 
 @media (max-width: 959px) {
     .home-hero__photo img {
-        object-fit: contain;
+        object-fit: cover;
         object-position: center top;
     }
 }
 
 @media (max-width: 480px) {
     .home-hero__photo img {
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
     }
 }
